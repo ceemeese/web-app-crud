@@ -1,0 +1,5 @@
+com/svalero/webappcrud/domain/Cat.class
+com/svalero/webappcrud/util/Constants.class
+com/svalero/webappcrud/dao/Database.class
+com/svalero/webappcrud/dao/CatDao.class
+com/svalero/webappcrud/dao/CatMapper.class

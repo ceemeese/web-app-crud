@@ -1,5 +1,11 @@
-com/svalero/webappcrud/domain/Cat.class
+com/svalero/webappcrud/dao/BreedMapper.class
 com/svalero/webappcrud/util/Constants.class
 com/svalero/webappcrud/dao/Database.class
+com/svalero/webappcrud/domain/Color.class
+com/svalero/webappcrud/dao/ColorMapper.class
+com/svalero/webappcrud/domain/Cat.class
+com/svalero/webappcrud/dao/BreedDao.class
 com/svalero/webappcrud/dao/CatDao.class
+com/svalero/webappcrud/domain/Breed.class
+com/svalero/webappcrud/dao/ColorDao.class
 com/svalero/webappcrud/dao/CatMapper.class

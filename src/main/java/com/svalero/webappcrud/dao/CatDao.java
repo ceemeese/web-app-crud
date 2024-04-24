@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface CatDao {
 
-    @SqlQuery("SELECT * FROM Gatos")
+    @SqlQuery("SELECT * FROM GATO")
     @UseRowMapper(CatMapper.class)
     List<Cat> getAllCats();
 
-    @SqlUpdate("INSERT INTO Gatos (nombre, edad) VALUES (?,?)")
+    @SqlUpdate("INSERT INTO Gato (nombre, edad) VALUES (?,?)")
     int addCat(String name, int age);
 }

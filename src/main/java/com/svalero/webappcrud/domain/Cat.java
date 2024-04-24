@@ -12,18 +12,17 @@ import java.sql.Date;
 @AllArgsConstructor
 public class Cat {
 
-    private int id;
+    private int idCat;
     private String name;
     private int age;
-    private String gender;
     private String description;
-    private String race;
-    private String color;
-    private String state;
+    private String image;
+    private int idGender;
+    private int idBreed;
+    private int idColor;
+    private int idState;
+    private int idUser;
     private Date admissionDate;
-    private int id_user;
-    private Date updateDate;
+    private Date dateUpdate;
     private String location;
-    private String picture;
-
 }

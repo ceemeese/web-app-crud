@@ -1,3 +1,19 @@
 
-ƒ
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Ñ°Ù®şÿÿÿÿJ$616ab353-e81a-4ec4-8ed2-71749fec2bc0
+˜
+java:S1104"PMake jdbi a static final constant or non-public and provide accessors if needed.(Õö—›şÿÿÿÿ8€â¬‹ñ1J$090584fa-3b29-42a8-9851-4a77b3b703d8
+–
+java:S1104"NMake db a static final constant or non-public and provide accessors if needed.(­Ù‹æıÿÿÿÿ8€â¬‹ñ1J$f4aaa667-13d9-4590-a8fa-28d9bdaf4227
+r
+java:S1444"*Make this "public static jdbi" field final(Õö—›şÿÿÿÿ8â¬‹ñ1J$8bfa2244-6bcf-4541-9fad-5a2967521358
+p
+java:S1444"(Make this "public static db" field final(­Ù‹æıÿÿÿÿ8â¬‹ñ1J$7b03db06-4b9a-4290-aee9-3e7cc6371900
+‚
+java:S1118":Add a private constructor to hide the implicit public one.(Ñ°Ù®şÿÿÿÿ8‰â¬‹ñ1J$43b993e1-f55b-4da3-9570-50984341038f
+¶
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(şĞùÿÿÿÿÿ8â¬‹ñ1J$ddfa5b53-3fc1-4d0b-aa91-c8fe917d26ba
+u
+java:S4925"-Remove this "Class.forName()", it is useless.(İˆùÿÿÿÿ8Œâ¬‹ñ1J$f07d31c0-7f3a-4cbc-9385-bd08f07ffbd5
+±
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(‘±øŸ8›§­‹ñ1J$87fbfc18-c71f-4470-84de-6db7a081e7fc
+M
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¶¡ğŒñ1

@@ -2,7 +2,6 @@ package com.svalero.webappcrud.util;
 
 public class Constants {
 
-    public static final String DATABASE = "ANIMALADOPTION";
     public static final String USERNAME = "CMSALVADOR";
     public static final String PASSWORD = "SANVALERO";
 

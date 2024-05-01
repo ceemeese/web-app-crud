@@ -63,3 +63,13 @@ N
 src/main/webapp/edit-breed.jsp,e/5/e53f914ff9b86dd96f851972dec21ed82b7f5efa
 k
 ;src/main/java/com/svalero/webappcrud/servlet/editBreed.java,3/b/3bad027e51efb6d24e48255acbe7b2bbc7a4c913
+j
+:src/main/java/com/svalero/webappcrud/servlet/editUser.java,2/3/2356d9b25a22ff073bd1d78c91c3221ea61ab7f5
+M
+src/main/webapp/edit-user.jsp,d/0/d0d7bbb18ddb7e5ecd570823495f3541ddd728e6
+e
+5src/main/java/com/svalero/webappcrud/dao/UserDao.java,6/1/612904c992be4bb3fe3602ba860a60e6205cbe0b
+e
+5src/main/java/com/svalero/webappcrud/domain/User.java,a/3/a3b41eb226c7c2d67e80124c691e0ba2c4dc31aa
+h
+8src/main/java/com/svalero/webappcrud/dao/UserMapper.java,0/f/0f6e721e460e33c3396c89186cafadf8cd5a53df

@@ -4,26 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.sql.Date;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cat {
 
-    private int id;
+    private int catID;
     private String name;
     private int age;
-    private String gender;
     private String description;
-    private String race;
-    private String color;
-    private String state;
-    private Date admissionDate;
-    private int id_user;
-    private Date updateDate;
+    private String image;
+    private Gender genderID;
+    private Breed breedID;
+    private Color colorID;
+    private State stateID;
+    private int userID;
     private String location;
-    private String picture;
-
 }

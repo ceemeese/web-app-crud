@@ -1,3 +1,15 @@
 
-ƒ
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Ñ°Ù®şÿÿÿÿJ$616ab353-e81a-4ec4-8ed2-71749fec2bc0
+˜
+java:S1104"PMake jdbi a static final constant or non-public and provide accessors if needed.(Õö—›şÿÿÿÿ8áÇ±Şò1J$871bd52e-f56c-4480-be2d-9b26c3dfd52c
+–
+java:S1104"NMake db a static final constant or non-public and provide accessors if needed.(­Ù‹æıÿÿÿÿ8áÇ±Şò1J$8e53f8e8-9e3e-426e-84fa-d221c4efdacc
+r
+java:S1444"*Make this "public static jdbi" field final(Õö—›şÿÿÿÿ8áÇ±Şò1J$c61af833-6810-4aa4-b556-97783bab700e
+p
+java:S1444"(Make this "public static db" field final(­Ù‹æıÿÿÿÿ8áÇ±Şò1J$e4f95147-2f10-4b8b-90a7-677ff41102b4
+‚
+java:S1118":Add a private constructor to hide the implicit public one.(Ñ°Ù®şÿÿÿÿ8æÇ±Şò1J$e583984a-9f25-4aa4-8240-3e66d1827d10
+¶
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(şĞùÿÿÿÿÿ8ùÇ±Şò1J$193c9b73-00f9-4bf9-8628-700a55bd991d
+±
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(‘±øŸ8¹¯´Şò1J$b947e283-f2b5-41ca-af2a-04a2590c46e0

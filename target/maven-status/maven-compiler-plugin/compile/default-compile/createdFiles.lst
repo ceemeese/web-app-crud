@@ -11,6 +11,7 @@ com/svalero/webappcrud/util/ErrorUtils.class
 com/svalero/webappcrud/dao/CatMapper.class
 com/svalero/webappcrud/util/Constants.class
 com/svalero/webappcrud/dao/GenderMapper.class
+com/svalero/webappcrud/servlet/editBreed.class
 com/svalero/webappcrud/domain/Gender.class
 com/svalero/webappcrud/util/DateUtils.class
 com/svalero/webappcrud/servlet/editCat.class

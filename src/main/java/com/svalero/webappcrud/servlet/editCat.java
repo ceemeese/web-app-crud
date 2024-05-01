@@ -1,10 +1,7 @@
 package com.svalero.webappcrud.servlet;
 
-import com.svalero.webappcrud.dao.*;
-import com.svalero.webappcrud.domain.Breed;
-import com.svalero.webappcrud.domain.Color;
-import com.svalero.webappcrud.domain.Gender;
-import com.svalero.webappcrud.domain.State;
+import com.svalero.webappcrud.dao.CatDao;
+import com.svalero.webappcrud.dao.Database;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,19 +26,13 @@ public class editCat extends HttpServlet {
             int age = Integer.parseInt(request.getParameter("age"));
             String description = request.getParameter("description");
             String image = request.getParameter("image2");
-
-            Database.connect();
-            Gender genderId = Database.jdbi.withExtension(GenderDao.class, dao -> dao.getIdGender(request.getParameter("gender")));
-            int gender = genderId.getGenderID();
-            Breed breedId = Database.jdbi.withExtension(BreedDao.class, dao -> dao.getIdBreed(request.getParameter("breed")));
-            int breed = breedId.getBreedID();
-            Color colorId = Database.jdbi.withExtension(ColorDao.class, dao -> dao.getIdColor(request.getParameter("color")));
-            int color = colorId.getColorID();
-            State stateId = Database.jdbi.withExtension(StateDao.class, dao -> dao.getIdState(request.getParameter("state")));
-            int state = stateId.getStateID();
-
+            int gender = Integer.parseInt(request.getParameter("gender"));
+            int breed = Integer.parseInt(request.getParameter("breed"));
+            int color = Integer.parseInt(request.getParameter("color"));
+            int state = Integer.parseInt(request.getParameter("state"));
             String location = request.getParameter("location");
 
+            Database.connect();
             int affectedRows = Database.jdbi.withExtension(CatDao.class,
                     dao -> dao.addCat(name, age, description, image, gender, breed, color, state, location));
             Database.close();

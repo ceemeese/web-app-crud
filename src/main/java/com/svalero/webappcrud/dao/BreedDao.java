@@ -2,6 +2,7 @@ package com.svalero.webappcrud.dao;
 
 import com.svalero.webappcrud.domain.Breed;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
+import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
 
 import java.util.List;
@@ -20,5 +21,6 @@ public interface BreedDao {
     @UseRowMapper(BreedMapper.class)
     Breed getBreed (int id);
 
-
+    @SqlUpdate("INSERT INTO breed (name, description) VALUES (?,?)")
+    int addBreed(String name, String description);
 }

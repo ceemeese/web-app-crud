@@ -51,10 +51,11 @@
                     <select id="gender" name="gender" class="form-control">
                         <%
                             Database.connect();
-                            List<Gender> genders = Database.jdbi.withExtension(GenderDao.class, dao-> dao.getAllGenders());
+                            List<Gender> genders = Database.jdbi.withExtension(GenderDao.class, GenderDao::getAllGenders);
+                            Database.close();
                             for (Gender gender : genders) {
                         %>
-                        <option><%= gender.getName() %></option>
+                        <option value="<%= gender.getGenderID() %>"><%= gender.getName() %></option>
                         <%
                             }
                         %>
@@ -65,10 +66,11 @@
                     <select id="breed" name="breed" class="form-control">
                         <%
                             Database.connect();
-                            List<Breed> breeds = Database.jdbi.withExtension(BreedDao.class, dao-> dao.getAllBreeds());
+                            List<Breed> breeds = Database.jdbi.withExtension(BreedDao.class, BreedDao::getAllBreeds);
+                            Database.close();
                             for (Breed breed : breeds) {
                         %>
-                        <option><%= breed.getName() %></option>
+                        <option value="<%= breed.getBreedID() %>"><%= breed.getName() %></option>
                         <%
                             }
                         %>
@@ -81,10 +83,11 @@
                     <select id="color" name="color" class="form-control">
                         <%
                             Database.connect();
-                            List<Color> colors = Database.jdbi.withExtension(ColorDao.class, dao-> dao.getAllColors());
+                            List<Color> colors = Database.jdbi.withExtension(ColorDao.class, ColorDao::getAllColors);
+                            Database.close();
                             for (Color color : colors) {
                         %>
-                        <option><%= color.getName() %></option>
+                        <option value="<%= color.getColorID() %>"><%= color.getName() %></option>
                         <%
                             }
                         %>
@@ -95,10 +98,11 @@
                     <select id="state" name="state" class="form-control">
                         <%
                             Database.connect();
-                            List<State> states = Database.jdbi.withExtension(StateDao.class, dao-> dao.getAllStates());
+                            List<State> states = Database.jdbi.withExtension(StateDao.class, StateDao::getAllStates);
+                            Database.close();
                             for (State state : states) {
                         %>
-                        <option><%= state.getName() %></option>
+                        <option value="<%= state.getStateID() %>"><%= state.getName() %></option>
                         <%
                             }
                         %>

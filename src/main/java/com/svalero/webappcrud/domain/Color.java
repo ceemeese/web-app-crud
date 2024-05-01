@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Color {
 
-    private int id_color;
+    private int colorID;
     private String name;
     private String description;
 

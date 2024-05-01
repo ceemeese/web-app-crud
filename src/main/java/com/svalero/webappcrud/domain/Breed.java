@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Breed {
 
-    private int id_breed;
+    private int breedID;
     private String name;
     private String description;
 

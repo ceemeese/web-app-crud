@@ -11,8 +11,8 @@ public class ColorMapper implements RowMapper<Color> {
 
     @Override
     public Color map(ResultSet rs, StatementContext ctx) throws SQLException {
-        return new Color(rs.getInt("id_color"),
-                rs.getString("nombre_color"),
-                rs.getString("descripcion_color"));
+        return new Color(rs.getInt("colorID"),
+                rs.getString("name"),
+                rs.getString("description"));
     }
 }

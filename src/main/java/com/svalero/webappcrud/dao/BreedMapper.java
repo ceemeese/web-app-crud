@@ -11,8 +11,8 @@ public class BreedMapper implements RowMapper<Breed> {
 
     @Override
     public Breed map(ResultSet rs, StatementContext ctx) throws SQLException {
-        return new Breed(rs.getInt("id_raza"),
-                rs.getString("nombre_raza"),
-                rs.getString("descripcion_raza"));
+        return new Breed(rs.getInt("breedID"),
+                rs.getString("name"),
+                rs.getString("description"));
     }
 }

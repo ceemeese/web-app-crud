@@ -8,8 +8,17 @@ import java.util.List;
 
 public interface BreedDao {
 
-    @SqlQuery("SELECT * FROM RAZA")
+    @SqlQuery("SELECT * FROM breed")
     @UseRowMapper(BreedMapper.class)
     List<Breed> getAllBreeds();
+
+    @SqlQuery("SELECT * FROM breed WHERE name = ?")
+    @UseRowMapper(BreedMapper.class)
+    Breed getIdBreed(String name);
+
+    @SqlQuery("SELECT * FROM breed WHERE breedID = ?")
+    @UseRowMapper(BreedMapper.class)
+    Breed getBreed (int id);
+
 
 }

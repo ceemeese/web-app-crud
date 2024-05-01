@@ -22,6 +22,9 @@ public class editCat extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         try {
+            if (hasValidationErrors(request, response))
+                return;
+
             String name = request.getParameter("name");
             int age = Integer.parseInt(request.getParameter("age"));
             String description = request.getParameter("description");
@@ -54,6 +57,22 @@ public class editCat extends HttpServlet {
             e.printStackTrace();
             sendError("Se ha producido una excepción", response);
         }
+    }
+
+    private boolean hasValidationErrors(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        boolean hasErrors = false;
+
+        if (request.getParameter("name").isBlank()) {
+            sendError("El nombre es un campo obligatorio", response);
+            hasErrors = true;
+        }
+
+        if (request.getParameter("age").isBlank()) {
+            sendError("La edad es un campo obligatorio", response);
+            hasErrors = true;
+        }
+
+        return hasErrors;
     }
 
     private void sendError(String message, HttpServletResponse response) throws IOException {

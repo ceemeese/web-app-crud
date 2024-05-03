@@ -3,6 +3,7 @@
 <%@ page import="com.svalero.webappcrud.domain.Cat" %>
 <%@ page import="com.svalero.webappcrud.domain.User" %>
 <%@ page import="com.svalero.webappcrud.domain.State" %>
+<%@ page import="com.svalero.webappcrud.domain.StatusAdoption" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@include file="includes/header.jsp"%>
@@ -26,11 +27,9 @@
 
     <section class="container">
         <form class="" action="" method="post" content="text/html" enctype="multipart/form-data" >
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <label class="form-label" for="infoAdoption">Información de la adopcion</label>
-                    <textarea type="text" rows="2" name="infoAdoption" class="form-control" id="infoAdoption" placeholder="Información de la adopción..."> </textarea>
-                </div>
+            <div class="form-group col">
+                <label class="form-label" for="infoAdoption">Información de la adopcion</label>
+                <textarea type="text" rows="2" name="infoAdoption" class="form-control" id="infoAdoption" placeholder="Información de la adopción..."> </textarea>
             </div>
             <div class="col">
                 <label class="form-label" for="catID">Gato</label>
@@ -68,11 +67,11 @@
                 <select id="statusAdoptionID" name="statusAdoptionID" class="form-control">
                     <%
                         Database.connect();
-                        List<State> states = Database.jdbi.withExtension(StateDao.class, StateDao::getAllStates);
+                        List<StatusAdoption> statusAdoptions = Database.jdbi.withExtension(StatusAdoptionDao.class, StatusAdoptionDao::getAllStatusAdoption);
                         Database.close();
-                        for (State state : states) {
+                        for (StatusAdoption statusAdoption : statusAdoptions) {
                     %>
-                    <option value="<%= state.getStateID() %>"><%= state.getName() %></option>
+                    <option value="<%= statusAdoption.getStatusAdoptionID() %>"><%= statusAdoption.getName() %></option>
                     <%
                         }
                     %>

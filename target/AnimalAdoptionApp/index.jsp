@@ -14,7 +14,7 @@
                 <h1 class="fw-light">Asociación Felina Patitas y Bigotes</h1>
                 <p class="lead text-body-secondary">Facilitamos la adopción responsable de gatitos rescatados, fomentando valores de cuidado animal y solidaridad en la comunidad..</p>
                 <p>
-                    <a href="edit-cat.jsp" class="btn btn-dark my-2">Adopta</a>
+                    <a href="edit-cat.jsp" class="btn btn-dark my-2">Añadir gatito</a>
                 </p>
             </div>
         </div>

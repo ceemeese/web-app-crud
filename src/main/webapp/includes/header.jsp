@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Adopta</a>
+                        <a class="nav-link active" aria-current="page" href="edit-cat.jsp">Adopta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Quién somos</a>
@@ -44,7 +44,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="view-breeds.jsp">Razas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view-adoptions.jsp">Adopciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view-users.jsp">Usuarios</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">

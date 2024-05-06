@@ -94,6 +94,12 @@ Bsrc/main/java/com/svalero/webappcrud/dao/StatusAdoptionMapper.java,7/4/74bcd57
 o
 ?src/main/java/com/svalero/webappcrud/dao/StatusAdoptionDao.java,7/1/710863b5754831cdf3a9f8296d8a6a22b5b92f4f
 R
-"src/main/webapp/view-adoption2.jsp,b/7/b740812a758f5383db54d2b9e57f4d9ea637ab14
-R
 "src/main/webapp/view-adoptions.jsp,f/f/ff77475c7c68a7238c60d5124caf12f7ee612eab
+N
+src/main/webapp/view-breed.jsp,c/f/cfdbb3a50f22fb10394ce7a17cf9982b40b58a71
+O
+src/main/webapp/view-breeds.jsp,7/6/7664f379ee4c7bb92b566d4eaa2b2ab081ecd68c
+N
+src/main/webapp/view-users.jsp,a/4/a484ec66fcef3c304d766cfd0a00473f15442ddd
+M
+src/main/webapp/view-user.jsp,b/d/bddde946359d09fafcedef2c42a715a2eeca30a6

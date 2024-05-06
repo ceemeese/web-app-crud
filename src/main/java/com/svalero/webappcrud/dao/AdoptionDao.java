@@ -18,6 +18,10 @@ public interface AdoptionDao {
     @UseRowMapper(AdoptionMapper.class)
     Adoption getAdoption (int adoptionID);
 
+    @SqlQuery("SELECT catID FROM adoption WHERE userID = ?")
+    @UseRowMapper(AdoptionMapper.class)
+    Adoption getAdoptionCat (int userID);
+
     @SqlUpdate("INSERT INTO adoption (dateAdoption, infoAdoption, userID, catID, statusAdoptionID) VALUES (?,?,?,?,?)")
     int addAdoption(Date dateAdoption, String infoAdoption, Integer userID, Integer catID, Integer statusAdoptionID);
 }

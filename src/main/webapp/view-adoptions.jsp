@@ -19,7 +19,7 @@
                     <th>Miembro gatuno</th>
                     <th>Candidato</th>
                     <th>Estado</th>
-                    <th>Información</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>

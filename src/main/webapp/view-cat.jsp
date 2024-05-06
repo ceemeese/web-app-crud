@@ -38,7 +38,7 @@
                                        <p class="card-text mb-1"><strong>Raza: </strong><%= cat.getBreedID().getName() %></p>
                                        <p class="card-text mb-1"><strong>Sexo: </strong><%= cat.getGenderID().getName()%></p>
                                        <p class="card-text mb-1"><strong>Localización: </strong><%= cat.getLocation()%></p>
-                                       <p class="ccard-text mb-1"> <strong>Edad: </strong> <%= cat.getAge() %></p>
+                                       <p class="card-text mb-1"> <strong>Edad: </strong> <%= cat.getAge() %></p>
                                    </div>
                                     <div>
                                         <button type="button" class="btn btn-dark">

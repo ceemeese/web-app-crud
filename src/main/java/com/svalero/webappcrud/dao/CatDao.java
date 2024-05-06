@@ -13,6 +13,10 @@ public interface CatDao {
     @UseRowMapper(CatMapper.class)
     List<Cat> getAllCats();
 
+    @SqlQuery("SELECT * FROM cat WHERE catID = ?")
+    @UseRowMapper(CatMapper.class)
+    Cat getCat(int catID);
+
     @SqlUpdate("INSERT INTO cat (name, age) VALUES (?,?)")
     int addCat(String name, int age);
 

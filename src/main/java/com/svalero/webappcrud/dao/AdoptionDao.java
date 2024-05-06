@@ -14,13 +14,13 @@ public interface AdoptionDao {
     @UseRowMapper(AdoptionMapper.class)
     List<Adoption> getAllAdoptions();
 
-    @SqlQuery("SELECT * FROM adoption WHERE name = ?")
-    @UseRowMapper(AdoptionMapper.class)
-    Adoption getIdAdoption(String name);
-
     @SqlQuery("SELECT * FROM adoption WHERE adoptionID = ?")
     @UseRowMapper(AdoptionMapper.class)
-    Adoption getAdoption (int id);
+    Adoption getAdoption (int adoptionID);
+
+    @SqlQuery("SELECT catID FROM adoption WHERE userID = ?")
+    @UseRowMapper(AdoptionMapper.class)
+    Adoption getAdoptionCat (int userID);
 
     @SqlUpdate("INSERT INTO adoption (dateAdoption, infoAdoption, userID, catID, statusAdoptionID) VALUES (?,?,?,?,?)")
     int addAdoption(Date dateAdoption, String infoAdoption, Integer userID, Integer catID, Integer statusAdoptionID);

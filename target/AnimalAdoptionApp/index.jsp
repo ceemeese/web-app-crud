@@ -14,7 +14,7 @@
                 <h1 class="fw-light">Asociación Felina Patitas y Bigotes</h1>
                 <p class="lead text-body-secondary">Facilitamos la adopción responsable de gatitos rescatados, fomentando valores de cuidado animal y solidaridad en la comunidad..</p>
                 <p>
-                    <a href="edit-cat.jsp" class="btn btn-dark my-2">Adopta</a>
+                    <a href="edit-cat.jsp" class="btn btn-dark my-2">Añadir gatito</a>
                 </p>
             </div>
         </div>
@@ -39,7 +39,7 @@
                             <p class="card-text"> <%= cat.getName() %> </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Visualizar</a>
+                                    <a href="view-cat.jsp?id=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
                                     <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
                                 </div>
                                 <small class="text-body-secondary"> <%= cat.getName() %> </small>

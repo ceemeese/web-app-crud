@@ -1,3 +1,5 @@
+/Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/StatusAdoptionDao.java
+/Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/domain/Adoption.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/ColorMapper.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/UserDao.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/domain/User.java
@@ -6,13 +8,18 @@
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/BreedMapper.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/domain/State.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/domain/Gender.java
+/Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/domain/StatusAdoption.java
+/Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/servlet/editAdoption.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/util/Constants.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/StateMapper.java
+/Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/AdoptionMapper.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/servlet/editCat.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/servlet/editBreed.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/domain/Breed.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/CatDao.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/servlet/editUser.java
+/Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/AdoptionDao.java
+/Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/StatusAdoptionMapper.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/UserMapper.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/dao/GenderMapper.java
 /Users/cristinamalmiercasalvador/Documents/SAN-VALERO/PROGRAMACION/Code/webAppCrud/src/main/java/com/svalero/webappcrud/domain/Cat.java

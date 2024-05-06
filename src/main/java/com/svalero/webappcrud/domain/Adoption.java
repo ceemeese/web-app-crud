@@ -14,9 +14,8 @@ public class Adoption {
     private int adoptionID;
     private Date dateAdoption;
     private String infoAdoption;
-    private Integer userID;
-    private Integer catID;
-    private Integer statusAdoptionID;
-
+    private User userID;
+    private Cat catID;
+    private StatusAdoption statusAdoptionID;
 }
 

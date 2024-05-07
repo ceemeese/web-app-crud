@@ -23,4 +23,7 @@ public interface BreedDao {
 
     @SqlUpdate("INSERT INTO breed (name, description) VALUES (?,?)")
     int addBreed(String name, String description);
+
+    @SqlUpdate("DELETE FROM breed WHERE breedID = ?")
+    int removeBreed(int breedID);
 }

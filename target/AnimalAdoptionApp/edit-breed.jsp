@@ -34,7 +34,7 @@
                 <textarea class="form-control" name="description" id="description" rows="2"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+            <button type="submit" class="btn btn-success mt-3">Enviar</button>
         </form>
         <br/>
         <div id="result"></div>

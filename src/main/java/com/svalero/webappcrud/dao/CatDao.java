@@ -22,4 +22,7 @@ public interface CatDao {
 
     @SqlUpdate("INSERT INTO cat (name, age, description, image, genderID, breedID, colorID, stateID, location) VALUES (?,?,?,?,?,?,?,?,?)")
     int addCat(String name, int age, String description, String image, int genderID, int breedID, int colorID, int stateID, String location);
+
+    @SqlUpdate("DELETE FROM cat WHERE catID = ?")
+    int removeCat(int catID);
 }

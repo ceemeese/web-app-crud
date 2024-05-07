@@ -35,7 +35,10 @@
                     <td> <%= user.getName()%> </td>
                     <td> <%= user.getSurname()%> </td>
                     <td> <%= user.getRegister()%> </td>
-                    <td><a href="view-user.jsp?id=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a></td>
+                    <td><a href="view-user.jsp?id=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
+                        <a href="view-user.jsp?id=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a href="remove-user?id=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-danger">X</a>
+                    </td>
                 </tr>
                 <%
                     }

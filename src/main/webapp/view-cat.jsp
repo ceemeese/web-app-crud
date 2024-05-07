@@ -32,7 +32,7 @@
                                    <div class="h-100">
                                        <h3 class="card-title">En adopción </h3>
                                        <h2 class="card-title"><%= cat.getName() %></h2>
-                                       <p class="card-text mb-1"><strong>Descripción: </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolorem eveniet facilis maiores reprehenderit veritatis vitae voluptatibus. Est, quibusdam rem</p>
+                                       <p class="card-text mb-1"><strong>Descripción: </strong> <%= cat.getDescription() %></p>
                                        <p class="card-text mb-1"><strong>Color: </strong><%= cat.getColorID().getName() %></p>
                                        <p class="card-text mb-1"><strong>Edad: </strong><%= cat.getAge() %></p>
                                        <p class="card-text mb-1"><strong>Raza: </strong><%= cat.getBreedID().getName() %></p>

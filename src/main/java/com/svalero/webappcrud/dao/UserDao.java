@@ -24,4 +24,7 @@ public interface UserDao {
 
     @SqlUpdate("INSERT INTO user (username, pass, email, name, surname, address, mobile, register) VALUES (?,?,?,?,?,?,?,?)")
     int addUser(String username, String pass, String email, String name, String surname, String address, String mobile, Date register);
+
+    @SqlUpdate("DELETE FROM user WHERE userID = ?")
+    int removeUser(int userID);
 }

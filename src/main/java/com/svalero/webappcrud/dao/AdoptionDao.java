@@ -24,4 +24,7 @@ public interface AdoptionDao {
 
     @SqlUpdate("INSERT INTO adoption (dateAdoption, infoAdoption, userID, catID, statusAdoptionID) VALUES (?,?,?,?,?)")
     int addAdoption(Date dateAdoption, String infoAdoption, Integer userID, Integer catID, Integer statusAdoptionID);
+
+    @SqlUpdate("DELETE FROM adoption WHERE adoptionID = ?")
+    int removeAdoption(int adoptionID);
 }

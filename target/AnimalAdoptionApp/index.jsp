@@ -41,6 +41,7 @@
                                 <div class="btn-group">
                                     <a href="view-cat.jsp?id=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
                                     <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
+                                    <a href="remove-cat?id=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
                                 </div>
                                 <small class="text-body-secondary"> <%= cat.getName() %> </small>
                             </div>

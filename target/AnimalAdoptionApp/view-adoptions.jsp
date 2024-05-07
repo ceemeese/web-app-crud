@@ -34,7 +34,10 @@
                     <td> <%= adoption.getCatID().getName() %> </td>
                     <td> <%= adoption.getUserID().getUsername() %> </td>
                     <td> <%= adoption.getStatusAdoptionID().getName() %> </td>
-                    <td><a href="view-adoption.jsp?id=<%= adoption.getAdoptionID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a></td>
+                    <td><a href="view-adoption.jsp?id=<%= adoption.getAdoptionID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
+                        <a href="view-adoption.jsp?id=<%= adoption.getAdoptionID()%>" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a href="remove-adoption?id=<%= adoption.getAdoptionID()%>" type="button" class="btn btn-sm btn-outline-danger">X</a>
+                    </td>
                 </tr>
                 <%
                     }

@@ -40,7 +40,8 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="view-breed.jsp?id=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
+                                    <a href="#" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
+                                    <a href="remove-breed?id=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
                                 </div>
                             </div>
                         </div>

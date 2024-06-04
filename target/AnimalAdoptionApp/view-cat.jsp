@@ -45,6 +45,7 @@
                                             <i class="bi bi-chat-left-heart-fill me-1"></i>
                                             Adoptame!
                                         </button>
+                                        <a href="edit-cat.jsp?catID=<%= cat.getCatID()%>" class="btn btn-dark">Modificar</a>
                                     </div>
                                 </div>
                             </div>

@@ -17,7 +17,7 @@ public class removeUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int userID = Integer.parseInt(request.getParameter("id"));
+        int userID = Integer.parseInt(request.getParameter("userID"));
 
         try {
             Database.connect();

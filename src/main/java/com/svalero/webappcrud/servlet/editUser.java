@@ -24,6 +24,11 @@ public class editUser extends HttpServlet {
             if (hasValidationErrors(request, response))
                 return;
 
+            int userID = 0;
+            if (request.getParameter("userID") != null) {
+                userID = Integer.parseInt(request.getParameter("userID"));
+            }
+
             String username = request.getParameter("username");
             String pass = request.getParameter("pass");
             String email = request.getParameter("email");
@@ -34,11 +39,18 @@ public class editUser extends HttpServlet {
             Date register = Date.valueOf(LocalDate.now());
 
             Database.connect();
-            int affectedRows = Database.jdbi.withExtension(UserDao.class,
-                    dao -> dao.addUser(username, pass, email, name, surname, address, mobile, register));
-            Database.close();
+            if (userID == 0) {
+                int affectedRows = Database.jdbi.withExtension(UserDao.class,
+                        dao -> dao.addUser(username, pass, email, name, surname, address, mobile, register));
+                Database.close();
+                sendMessage("Nuevo usuario registrado correctamente", response);
+            } else {
+                final int finalID = userID;
+                int affectedRows = Database.jdbi.withExtension(UserDao.class, dao -> dao.updateUser(username, email, name, surname, address, mobile, finalID));
+                Database.close();
+                sendMessage("Usuario modificado correctamente", response);
+            }
 
-            sendMessage("Nuevo usuario registrado correctamente", response);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             sendError("Se ha producido un error", response);

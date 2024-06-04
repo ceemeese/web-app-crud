@@ -28,4 +28,7 @@ public interface UserDao {
     @SqlUpdate("DELETE FROM user WHERE userID = ?")
     int removeUser(int userID);
 
+    @SqlUpdate("UPDATE user SET username = ?, email = ?, name = ?, surname = ?, address = ?, mobile = ? WHERE userID = ?")
+    int updateUser(String username, String email, String name, String surname, String address, String mobile, int userID);
+
 }

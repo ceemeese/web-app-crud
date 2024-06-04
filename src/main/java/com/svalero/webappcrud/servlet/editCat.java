@@ -22,7 +22,7 @@ public class editCat extends HttpServlet {
             if (hasValidationErrors(request, response))
                 return;
 
-            //REVISAR POR QUE GENERA UNO NUEVO SI EDITAMOS
+
             int catID = 0;
             if (request.getParameter("catID") != null) {
                 catID = Integer.parseInt(request.getParameter("catID"));

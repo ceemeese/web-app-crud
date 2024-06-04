@@ -13,7 +13,7 @@
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Razas</h1>
-                <p class="lead text-body-secondary">Tarjeta de presentación felina: es la etiqueta que lleva puesta, con su propio estilo de pelo, color y personalidad"</p>
+                <p class="lead text-body-secondary">Tarjeta de presentación felina: es la etiqueta que lleva puesta, con su propio estilo de pelo, color y personalidad</p>
                 <p>
                     <a href="edit-breed.jsp" class="btn btn-dark my-2">Añadir raza</a>
                 </p>
@@ -40,7 +40,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="view-breed.jsp?id=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
-                                    <a href="#" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
+                                    <a href="edit-breed.jsp?id=<%= breed.getBreedID() %>" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
                                     <a href="remove-breed?id=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@
         <h1>Miembro de la familia</h1>
     </section>
         <%
-            int catID = Integer.parseInt(request.getParameter("id"));
+            int catID = Integer.parseInt(request.getParameter("catID"));
 
            Database.connect();
            Cat cat = Database.jdbi.withExtension(CatDao.class, dao-> dao.getCat(catID));

@@ -1,6 +1,6 @@
 
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(αλό¨8―Ί…±σ1J$ae10208c-56c8-42ce-8a96-f5f0e14a63ea
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(αλό¨8―Ί…±σ1J$18bd8000-cf13-4dfb-aa01-6ca0dfee5a9c
 ƒ
-java:S1854""@Remove this useless assignment to local variable "affectedRows".(©έ‹8·Ί…±σ1J$e7efe226-9437-4502-ac3d-edc0410d73d7
+java:S1854""@Remove this useless assignment to local variable "affectedRows".(©έ‹8·Ί…±σ1J$cfa04262-6a95-41eb-8a5c-0027e5652401
 t
-java:S1481""1Remove this unused "affectedRows" local variable.(©έ‹8ΉΊ…±σ1J$09f97712-2ae9-477c-9bc9-6c5abe3656b0
+java:S1481""1Remove this unused "affectedRows" local variable.(©έ‹8ΉΊ…±σ1J$7612fa0b-4b5c-42ba-9b22-e121ce034217

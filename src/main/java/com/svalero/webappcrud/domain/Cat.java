@@ -18,6 +18,5 @@ public class Cat {
     private Breed breedID;
     private Color colorID;
     private State stateID;
-    private int userID;
     private String location;
 }

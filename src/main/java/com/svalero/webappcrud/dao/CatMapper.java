@@ -29,7 +29,6 @@ public class CatMapper implements RowMapper<Cat> {
                 breed,
                 color,
                 state,
-                rs.getInt("userID"),
                 rs.getString("location")
         );
     }

@@ -17,7 +17,7 @@ public class removeCat extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int catID = Integer.parseInt(request.getParameter("id"));
+        int catID = Integer.parseInt(request.getParameter("catID"));
 
         try {
             Database.connect();

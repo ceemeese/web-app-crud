@@ -27,4 +27,5 @@ public interface UserDao {
 
     @SqlUpdate("DELETE FROM user WHERE userID = ?")
     int removeUser(int userID);
+
 }

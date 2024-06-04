@@ -19,4 +19,5 @@ public interface GenderDao {
     @SqlQuery("SELECT * FROM gender WHERE genderID = ?")
     @UseRowMapper(GenderMapper.class)
     Gender getGender (int id);
+
 }

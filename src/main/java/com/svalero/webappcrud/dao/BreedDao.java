@@ -26,4 +26,5 @@ public interface BreedDao {
 
     @SqlUpdate("DELETE FROM breed WHERE breedID = ?")
     int removeBreed(int breedID);
+
 }

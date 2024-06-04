@@ -39,9 +39,9 @@
                             <p class="card-text"> <%= breed.getName() %> </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="view-breed.jsp?id=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
-                                    <a href="edit-breed.jsp?id=<%= breed.getBreedID() %>" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
-                                    <a href="remove-breed?id=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                    <a href="view-breed.jsp?breedID=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
+                                    <a href="edit-breed.jsp?breedID=<%= breed.getBreedID() %>" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
+                                    <a href="remove-breed?breedID=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
                                 </div>
                             </div>
                         </div>

@@ -17,7 +17,7 @@ public class removeBreed extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int breedID = Integer.parseInt(request.getParameter("id"));
+        int breedID = Integer.parseInt(request.getParameter("breedID"));
 
         try {
             Database.connect();

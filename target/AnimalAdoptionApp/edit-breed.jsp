@@ -18,20 +18,20 @@
 </script>
 
 <%
-    int id;
+    int breedID;
     Breed breed = null;
-    if (request.getParameter("id") == null) {
-        id = 0;
+    if (request.getParameter("breedID") == null) {
+        breedID = 0;
     } else {
-        id = Integer.parseInt(request.getParameter("id"));
+        breedID = Integer.parseInt(request.getParameter("breedID"));
         Database.connect();
-        breed = Database.jdbi.withExtension(BreedDao.class, dao-> dao.getBreed(id));
+        breed = Database.jdbi.withExtension(BreedDao.class, dao-> dao.getBreed(breedID));
     }
 %>
 
 <main>
     <section class="py-5 text-center container">
-        <% if (id == 0) { %>
+        <% if (breedID == 0) { %>
         <h1>Registro de raza</h1>
         <% } else { %>
         <h1>Modificar raza</h1>
@@ -43,17 +43,16 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label class="form-label" for="name">Nombre</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
-                        <% if (id != 0 ) { %> value=" <%= breed.getName() %>"<% } %>>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"<% if (breedID != 0 ) { %> value="<%= breed.getName()%><%}%>">
                 </div>
             </div>
             <div class="form-group mt-1">
                 <label class="form-label" for="description">Descripción</label>
-                <textarea class="form-control" name="description" id="description" rows="2"><%if(id != 0){%><%=breed.getDescription()%><%}%></textarea>
-
+                <textarea class="form-control" name="description" id="description" rows="2"><% if (breedID != 0) { %> <%= breed.getDescription() %><% } %></textarea>
             </div>
 
             <button type="submit" class="btn btn-success mt-3">Enviar</button>
+            <input type="hidden" name="breedID" value="<%= breedID %>">
         </form>
         <br/>
         <div id="result"></div>

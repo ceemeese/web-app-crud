@@ -22,14 +22,27 @@ public class editBreed extends HttpServlet {
             if (hasValidationErrors(request, response))
                 return;
 
+            int breedID = 0;
+            if (request.getParameter("breedID") != null) {
+                breedID = Integer.parseInt(request.getParameter("breedID"));
+            }
+
             String name = request.getParameter("name");
             String description = request.getParameter("description");
 
             Database.connect();
-            int affectedRows = Database.jdbi.withExtension(BreedDao.class, dao -> dao.addBreed(name, description));
-            Database.close();
+            if (breedID == 0) {
+                int affectedRows = Database.jdbi.withExtension(BreedDao.class, dao -> dao.addBreed(name, description));
+                Database.close();
+                sendMessage("Nueva raza registrada correctamente", response);
+            } else {
+                final int finalID = breedID;
+                int affectedRows = Database.jdbi.withExtension(BreedDao.class,
+                        dao -> dao.updateBreed(name, description, finalID));
+                Database.close();
+                sendMessage("Raza modificada correctamente", response);
+            }
 
-            sendMessage("Nueva raza registrada correctamente", response);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             sendError("Se ha producido un error", response);

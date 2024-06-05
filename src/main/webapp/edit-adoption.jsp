@@ -1,9 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.svalero.webappcrud.dao.*" %>
-<%@ page import="com.svalero.webappcrud.domain.Cat" %>
-<%@ page import="com.svalero.webappcrud.domain.User" %>
-<%@ page import="com.svalero.webappcrud.domain.State" %>
-<%@ page import="com.svalero.webappcrud.domain.StatusAdoption" %>
+<%@ page import="com.svalero.webappcrud.domain.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@include file="includes/header.jsp"%>
@@ -20,16 +17,32 @@
     });
 </script>
 
+<%
+    int adoptionID;
+    Adoption adoption = null;
+    if (request.getParameter("adoptionID") == null) {
+        adoptionID = 0;
+    } else {
+        adoptionID = Integer.parseInt(request.getParameter("adoptionID"));
+        Database.connect();
+        adoption = Database.jdbi.withExtension(AdoptionDao.class, dao-> dao.getAdoption(adoptionID));
+    }
+%>
+
 <main>
     <section class="py-5 text-center container">
-        <h1>Formulario de registro de adopciones</h1>
+        <% if (adoptionID == 0) { %>
+        <h1>Registro de adopción</h1>
+        <% } else { %>
+        <h1>Modificar adopción/h1>
+        <% } %>
     </section>
 
     <section class="container">
         <form class="" action="" method="post" content="text/html" enctype="multipart/form-data" >
             <div class="form-group col">
                 <label class="form-label" for="infoAdoption">Información de la adopcion</label>
-                <textarea type="text" rows="2" name="infoAdoption" class="form-control" id="infoAdoption" placeholder="Información de la adopción..."> </textarea>
+                <textarea type="text" rows="2" name="infoAdoption" class="form-control" id="infoAdoption" placeholder="Información de la adopción..."><%if(adoptionID != 0){%><%=adoption.getInfoAdoption()%><%}%></textarea>
             </div>
             <div class="col">
                 <label class="form-label" for="catID">Gato</label>
@@ -78,7 +91,8 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+            <button type="submit" class="btn btn-success mt-3">Enviar</button>
+            <input type="hidden" name="adoptionID" value="<%= adoptionID %>">
         </form>
         <br/>
         <div id="result"></div>

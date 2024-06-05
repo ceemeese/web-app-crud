@@ -105,3 +105,11 @@ N
 src/main/webapp/view-users.jsp,a/4/a484ec66fcef3c304d766cfd0a00473f15442ddd
 M
 src/main/webapp/view-user.jsp,b/d/bddde946359d09fafcedef2c42a715a2eeca30a6
+k
+;src/main/java/com/svalero/webappcrud/servlet/removeCat.java,1/6/168aae697f2eb217c3b434b505911a4125823eef
+m
+=src/main/java/com/svalero/webappcrud/servlet/removeBreed.java,b/5/b581e3186dd8b4c44b17e894cb674871ff400a4a
+p
+@src/main/java/com/svalero/webappcrud/servlet/removeAdoption.java,f/3/f38bcdabbc85175b71f09e7320284e3cc762e04b
+l
+<src/main/java/com/svalero/webappcrud/servlet/removeUser.java,6/2/625a847609a99a82eba5e2d58cb6fc2f4fe71a71

@@ -14,7 +14,7 @@
         <h1>Usuario</h1>
     </section>
         <%
-            int userID = Integer.parseInt(request.getParameter("id"));
+            int userID = Integer.parseInt(request.getParameter("userID"));
 
            Database.connect();
            User user = Database.jdbi.withExtension(UserDao.class, dao-> dao.getUser(userID));
@@ -33,7 +33,7 @@
                 <p class="card-text"> <strong>Teléfono: </strong> <%= user.getMobile() %></p>
                 <p class="card-text"> <strong>Fecha Registro: </strong> <%= user.getRegister() %></p>
 
-                <a href="edit-user.jsp" class="btn btn-primary">Modificar</a>
+                <a href="edit-user.jsp?userID=<%= user.getUserID()%>" class="btn btn-dark">Modificar</a>
             </div>
         </div>
     </div>

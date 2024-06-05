@@ -12,7 +12,7 @@
         <h1>Raza</h1>
     </section>
         <%
-            int breedID = Integer.parseInt(request.getParameter("id"));
+            int breedID = Integer.parseInt(request.getParameter("breedID"));
 
            Database.connect();
            Breed breed = Database.jdbi.withExtension(BreedDao.class, dao-> dao.getBreed(breedID));
@@ -31,13 +31,14 @@
                                 <div class="card-body d-flex flex-column">
                                    <div class="h-100">
                                        <h2 class="card-title"><%= breed.getName() %></h2>
-                                       <p class="card-text mb-1"><strong>Descripción: </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolorem eveniet facilis maiores reprehenderit veritatis vitae voluptatibus. Est, quibusdam rem</p>
+                                       <p class="card-text mb-1"><strong>Descripción: </strong> <%= breed.getDescription() %> </p>
                                    </div>
                                     <div>
                                         <button type="button" class="btn btn-dark">
                                             <i class="bi bi-pencil"></i>
                                             Editar
                                         </button>
+                                        <a href="edit-breed.jsp?breedID=<%= breed.getBreedID() %>" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
                                     </div>
                                 </div>
                             </div>

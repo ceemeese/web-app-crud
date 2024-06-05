@@ -17,9 +17,13 @@ public interface CatDao {
     @UseRowMapper(CatMapper.class)
     Cat getCat(int catID);
 
-    @SqlUpdate("INSERT INTO cat (name, age) VALUES (?,?)")
-    int addCat(String name, int age);
-
     @SqlUpdate("INSERT INTO cat (name, age, description, image, genderID, breedID, colorID, stateID, location) VALUES (?,?,?,?,?,?,?,?,?)")
     int addCat(String name, int age, String description, String image, int genderID, int breedID, int colorID, int stateID, String location);
+
+    @SqlUpdate("UPDATE cat SET name = ?, age = ?, description = ?, image = ?, genderID = ?, breedID = ?, colorID = ?, stateID = ?, location = ? WHERE catID = ?")
+    int updateCat(String name, int age, String description, String image, int genderID, int breedID, int colorID, int stateID, String location, int catID);
+
+    @SqlUpdate("DELETE FROM cat WHERE catID = ?")
+    int removeCat(int catID);
+
 }

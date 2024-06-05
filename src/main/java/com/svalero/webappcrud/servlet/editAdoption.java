@@ -24,6 +24,11 @@ public class editAdoption extends HttpServlet {
             if (hasValidationErrors(request, response))
                 return;
 
+            int adoptionID = 0;
+            if (request.getParameter("adoptionID") != null) {
+                adoptionID = Integer.parseInt(request.getParameter("adoptionID"));
+            }
+
             String infoAdoption = request.getParameter("infoAdoption");
             int userID = Integer.parseInt(request.getParameter("userID"));
             int catID = Integer.parseInt(request.getParameter("catID"));
@@ -31,10 +36,19 @@ public class editAdoption extends HttpServlet {
             Date dateAdoption = Date.valueOf(LocalDate.now());
 
             Database.connect();
-            int affectedRows = Database.jdbi.withExtension(AdoptionDao.class, dao -> dao.addAdoption(dateAdoption, infoAdoption, userID, catID, statusAdoptionID));
-            Database.close();
+            if (adoptionID == 0) {
+                int affectedRows = Database.jdbi.withExtension(AdoptionDao.class, dao -> dao.addAdoption(dateAdoption, infoAdoption, userID, catID, statusAdoptionID));
+                Database.close();
+                sendMessage("Adopción registrada", response);
+            } else {
+                final int finalID = adoptionID;
+                int affectedRows = Database.jdbi.withExtension(AdoptionDao.class,
+                        dao -> dao.updateAdoption(infoAdoption, userID, catID, statusAdoptionID, finalID));
+                Database.close();
+                sendMessage("Adopción modificada correctamente", response);
 
-            sendMessage("Adopción registrada", response);
+            }
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             sendError("Se ha producido un error", response);

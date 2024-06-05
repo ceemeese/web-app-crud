@@ -14,7 +14,7 @@
         <h1>Adopción</h1>
     </section>
         <%
-            int adoptionID = Integer.parseInt(request.getParameter("id"));
+            int adoptionID = Integer.parseInt(request.getParameter("adoptionID"));
 
            Database.connect();
            Adoption adoption = Database.jdbi.withExtension(AdoptionDao.class, dao-> dao.getAdoption(adoptionID));
@@ -41,6 +41,7 @@
                                    </div>
                                     <div>
                                         <button type="button" class="btn btn-dark">Editar</button>
+                                        <a href="edit-adoption.jsp?adoptionID=<%= adoption.getAdoptionID()%>" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
                                     </div>
                                 </div>
                             </div>

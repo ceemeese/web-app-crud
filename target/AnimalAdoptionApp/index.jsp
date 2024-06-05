@@ -26,7 +26,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <%
                     Database.connect();
-                    List<Cat> cats = Database.jdbi.withExtension(CatDao.class, dao-> dao.getAllCats());
+                    List<Cat> cats = Database.jdbi.withExtension(CatDao.class, CatDao::getAllCats);
                     for (Cat cat : cats) {
                 %>
                 <div class="col">
@@ -39,8 +39,9 @@
                             <p class="card-text"> <%= cat.getName() %> </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="view-cat.jsp?id=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
+                                    <a href="view-cat.jsp?catID=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
+                                    <a href="edit-cat.jsp?catID=<%= cat.getCatID() %>" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
+                                    <a href="remove-cat?catID=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
                                 </div>
                                 <small class="text-body-secondary"> <%= cat.getName() %> </small>
                             </div>

@@ -22,6 +22,12 @@ public class editCat extends HttpServlet {
             if (hasValidationErrors(request, response))
                 return;
 
+
+            int catID = 0;
+            if (request.getParameter("catID") != null) {
+                catID = Integer.parseInt(request.getParameter("catID"));
+            }
+
             String name = request.getParameter("name");
             int age = Integer.parseInt(request.getParameter("age"));
             String description = request.getParameter("description");
@@ -33,11 +39,19 @@ public class editCat extends HttpServlet {
             String location = request.getParameter("location");
 
             Database.connect();
-            int affectedRows = Database.jdbi.withExtension(CatDao.class,
-                    dao -> dao.addCat(name, age, description, image, gender, breed, color, state, location));
-            Database.close();
+            if (catID == 0) {
+                int affectedRows = Database.jdbi.withExtension(CatDao.class,
+                        dao -> dao.addCat(name, age, description, image, gender, breed, color, state, location));
+                Database.close();
+                sendMessage("Nuevo miembro registrado correctamente", response);
+            } else {
+                final int finalID = catID;
+                int affectedRows = Database.jdbi.withExtension(CatDao.class,
+                        dao -> dao.updateCat(name, age, description, image, gender, breed, color, state, location, finalID));
+                Database.close();
+                sendMessage("Miembro modificado correctamente", response);
+            }
 
-            sendMessage("Nuevo miembro registrado correctamente", response);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             sendError("Se ha producido un error", response);

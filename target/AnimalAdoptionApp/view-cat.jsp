@@ -12,7 +12,7 @@
         <h1>Miembro de la familia</h1>
     </section>
         <%
-            int catID = Integer.parseInt(request.getParameter("id"));
+            int catID = Integer.parseInt(request.getParameter("catID"));
 
            Database.connect();
            Cat cat = Database.jdbi.withExtension(CatDao.class, dao-> dao.getCat(catID));
@@ -32,7 +32,7 @@
                                    <div class="h-100">
                                        <h3 class="card-title">En adopción </h3>
                                        <h2 class="card-title"><%= cat.getName() %></h2>
-                                       <p class="card-text mb-1"><strong>Descripción: </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolorem eveniet facilis maiores reprehenderit veritatis vitae voluptatibus. Est, quibusdam rem</p>
+                                       <p class="card-text mb-1"><strong>Descripción: </strong> <%= cat.getDescription() %></p>
                                        <p class="card-text mb-1"><strong>Color: </strong><%= cat.getColorID().getName() %></p>
                                        <p class="card-text mb-1"><strong>Edad: </strong><%= cat.getAge() %></p>
                                        <p class="card-text mb-1"><strong>Raza: </strong><%= cat.getBreedID().getName() %></p>
@@ -45,6 +45,7 @@
                                             <i class="bi bi-chat-left-heart-fill me-1"></i>
                                             Adoptame!
                                         </button>
+                                        <a href="edit-cat.jsp?catID=<%= cat.getCatID()%>" class="btn btn-dark">Modificar</a>
                                     </div>
                                 </div>
                             </div>

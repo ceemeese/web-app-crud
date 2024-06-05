@@ -21,7 +21,6 @@
                     <th>Apellido</th>
                     <th>Fecha registro</th>
                     <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -35,7 +34,10 @@
                     <td> <%= user.getName()%> </td>
                     <td> <%= user.getSurname()%> </td>
                     <td> <%= user.getRegister()%> </td>
-                    <td><a href="view-user.jsp?id=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a></td>
+                    <td><a href="view-user.jsp?userID=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
+                        <a href="edit-user.jsp?userID=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a href="remove-user?userID=<%= user.getUserID()%>" type="button" class="btn btn-sm btn-outline-danger">X</a>
+                    </td>
                 </tr>
                 <%
                     }

@@ -27,4 +27,7 @@ public interface AdoptionDao {
 
     @SqlUpdate("DELETE FROM adoption WHERE adoptionID = ?")
     int removeAdoption(int adoptionID);
+
+    @SqlUpdate("UPDATE adoption SET infoAdoption = ?, userID = ?, catID = ?, statusAdoptionID = ? WHERE adoptionID = ?")
+    int updateAdoption(String infoAdoption, int userID, int catID, int statusAdoptionID, int adoptionID);
 }

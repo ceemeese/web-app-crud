@@ -18,20 +18,20 @@
 </script>
 
 <%
-    int id;
+    int adoptionID;
     Adoption adoption = null;
-    if (request.getParameter("id") == null) {
-        id = 0;
+    if (request.getParameter("adoptionID") == null) {
+        adoptionID = 0;
     } else {
-        id = Integer.parseInt(request.getParameter("id"));
+        adoptionID = Integer.parseInt(request.getParameter("adoptionID"));
         Database.connect();
-        adoption = Database.jdbi.withExtension(AdoptionDao.class, dao-> dao.getAdoption(id));
+        adoption = Database.jdbi.withExtension(AdoptionDao.class, dao-> dao.getAdoption(adoptionID));
     }
 %>
 
 <main>
     <section class="py-5 text-center container">
-        <% if (id == 0) { %>
+        <% if (adoptionID == 0) { %>
         <h1>Registro de adopción</h1>
         <% } else { %>
         <h1>Modificar adopción/h1>
@@ -42,7 +42,7 @@
         <form class="" action="" method="post" content="text/html" enctype="multipart/form-data" >
             <div class="form-group col">
                 <label class="form-label" for="infoAdoption">Información de la adopcion</label>
-                <textarea type="text" rows="2" name="infoAdoption" class="form-control" id="infoAdoption" placeholder="Información de la adopción..."> <%if(id != 0){%><%=adoption.getInfoAdoption()%><%}%></textarea>
+                <textarea type="text" rows="2" name="infoAdoption" class="form-control" id="infoAdoption" placeholder="Información de la adopción..."><%if(adoptionID != 0){%><%=adoption.getInfoAdoption()%><%}%></textarea>
             </div>
             <div class="col">
                 <label class="form-label" for="catID">Gato</label>
@@ -92,6 +92,7 @@
             </div>
 
             <button type="submit" class="btn btn-success mt-3">Enviar</button>
+            <input type="hidden" name="adoptionID" value="<%= adoptionID %>">
         </form>
         <br/>
         <div id="result"></div>

@@ -17,7 +17,7 @@ public class removeAdoption extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int adoptionID = Integer.parseInt(request.getParameter("id"));
+        int adoptionID = Integer.parseInt(request.getParameter("adoptionID"));
 
         try {
             Database.connect();

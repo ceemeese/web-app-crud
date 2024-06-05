@@ -1,10 +1,10 @@
 
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ƒΟªωÿÿÿÿ8Βοδωτ1
-]
-java:S1854"@Remove this useless assignment to local variable "affectedRows".(“φέ8Ιοδωτ1
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ƒΟªωÿÿÿÿ8Βοδωτ1J$8abedb3e-22ed-415b-8db6-9646db59b485
+ƒ
+java:S1854"@Remove this useless assignment to local variable "affectedRows".(“φέ8Ιοδωτ1J$9a1cf53d-2e38-4f83-bee8-7c7964aa6992
 €
-java:S2147"DCombine this catch with the one at line 28, which has the same body.(Ι®£J$13667163-2032-4e1c-a004-8046ad3cc2b2
+java:S2147"DCombine this catch with the one at line 28, which has the same body.(Ι®£J$cecc663b-50f5-462c-a585-709d94aae9d9
 €
-java:S2147 "DCombine this catch with the one at line 30, which has the same body.(”ύΎJ$da8ffd65-8225-4988-a4c7-869e08f9fd20
-N
-java:S1481"1Remove this unused "affectedRows" local variable.(“φέ8Λοδωτ1
+java:S2147 "DCombine this catch with the one at line 30, which has the same body.(”ύΎJ$80d87d6c-5eae-46e0-bf19-ec074e5216f7
+t
+java:S1481"1Remove this unused "affectedRows" local variable.(“φέ8Λοδωτ1J$de53ea13-ff02-43de-895d-8695f374f3b8

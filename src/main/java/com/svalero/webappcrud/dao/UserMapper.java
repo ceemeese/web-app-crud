@@ -19,6 +19,7 @@ public class UserMapper implements RowMapper<User> {
                 rs.getString("surname"),
                 rs.getString("address"),
                 rs.getString("mobile"),
-                rs.getDate("register"));
+                rs.getDate("register"),
+                rs.getString("role"));
     }
 }

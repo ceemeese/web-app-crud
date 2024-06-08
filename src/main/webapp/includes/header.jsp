@@ -5,7 +5,7 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
     <title>Animales en adopción</title>
 
-    <link href="style.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -55,7 +55,8 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscador</button>
+                    <button class="btn btn-outline-success me-2" type="submit">Buscador</button>
+                    <a class="btn btn-outline-primary" href="login.jsp">Login</a>
                 </form>
             </div>
         </div>

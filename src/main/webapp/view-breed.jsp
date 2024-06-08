@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="row g-0">
                             <div class="col-6 col-md-5">
-                                <img class="card-img img-fluid rounded-start" src="./gato.jpg" alt="gato">
+                                <img class="card-img img-fluid rounded-start" src=../webapp_pictures/<%= breed.getImage() %> alt="gato">
                             </div>
                             <div class="col-6 col-md-7">
                                 <div class="card-body d-flex flex-column">

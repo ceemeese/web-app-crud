@@ -111,3 +111,9 @@ p
 @src/main/java/com/svalero/webappcrud/servlet/removeAdoption.java,f/3/f38bcdabbc85175b71f09e7320284e3cc762e04b
 l
 <src/main/java/com/svalero/webappcrud/servlet/removeUser.java,6/2/625a847609a99a82eba5e2d58cb6fc2f4fe71a71
+I
+src/main/webapp/login.jsp,8/5/85ee523d01e5e19376db640e846c91bbcb0a1c22
+Y
+)src/main/webapp/includes/header-login.jsp,3/d/3d4a99cb1f16cdafeace31f8361b913ad64b1865
+g
+7src/main/java/com/svalero/webappcrud/servlet/login.java,c/6/c61c824e7547917ac72c0c8df12ce4157cf94b9e

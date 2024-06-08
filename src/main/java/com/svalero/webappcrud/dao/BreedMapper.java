@@ -13,6 +13,7 @@ public class BreedMapper implements RowMapper<Breed> {
     public Breed map(ResultSet rs, StatementContext ctx) throws SQLException {
         return new Breed(rs.getInt("breedID"),
                 rs.getString("name"),
-                rs.getString("description"));
+                rs.getString("description"),
+                rs.getString("image"));
     }
 }

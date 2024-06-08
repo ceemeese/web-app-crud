@@ -5,7 +5,7 @@
 
 <%@include file="includes/header.jsp"%>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function() {
         $("form").on("submit", function(event) {
             event.preventDefault();
@@ -15,7 +15,7 @@
             });
         });
     });
-</script>
+</script> -->
 
 <%
     int breedID;
@@ -39,7 +39,7 @@
     </section>
 
     <section class="container">
-        <form class="" action="" method="post" content="text/html" enctype="multipart/form-data" >
+        <form class="" action="edit-breed" method="post" content="text/html" enctype="multipart/form-data" >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label class="form-label" for="name">Nombre</label>
@@ -50,7 +50,10 @@
                 <label class="form-label" for="description">Descripción</label>
                 <textarea class="form-control" name="description" id="description" rows="2"><% if (breedID != 0) { %> <%= breed.getDescription() %><% } %></textarea>
             </div>
-
+            <div class="col">
+                <label for="image" class="form-label">Foto</label>
+                <input type="file" name="image" class="form-control" id="image"<% if (breedID != 0 ) { %> value="<%= breed.getImage()%><%}%>">
+            </div>
             <button type="submit" class="btn btn-success mt-3">Enviar</button>
             <input type="hidden" name="breedID" value="<%= breedID %>">
         </form>

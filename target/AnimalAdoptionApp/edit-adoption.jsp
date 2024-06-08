@@ -18,6 +18,10 @@
 </script>
 
 <%
+    if (!role.equals("admin")) {
+        response.sendRedirect("/webapp");
+    }
+
     int adoptionID;
     Adoption adoption = null;
     if (request.getParameter("adoptionID") == null) {

@@ -119,3 +119,5 @@ g
 7src/main/java/com/svalero/webappcrud/servlet/login.java,c/6/c61c824e7547917ac72c0c8df12ce4157cf94b9e
 n
 >src/main/java/com/svalero/webappcrud/servlet/loginServlet.java,7/f/7fd680281910532b3093d43b43796172d67cee50
+k
+;src/main/java/com/svalero/webappcrud/util/SessionUtils.java,b/2/b2a26a2fb6149a7db689f6f928ffa77befe8edfb

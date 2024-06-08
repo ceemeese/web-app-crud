@@ -6,10 +6,7 @@ import com.svalero.webappcrud.dao.Database;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,6 +26,14 @@ public class editCat extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+
+        HttpSession currentSession = request.getSession();
+        if (currentSession.getAttribute("role") != null) {
+            if (!currentSession.getAttribute("role").equals("admin")) {
+                response.sendRedirect("/webapp");
+            }
+        }
+
 
         try {
             if (hasValidationErrors(request, response))

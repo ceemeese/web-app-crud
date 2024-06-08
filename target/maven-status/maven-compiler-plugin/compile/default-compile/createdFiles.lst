@@ -18,6 +18,7 @@ com/svalero/webappcrud/dao/StatusAdoptionDao.class
 com/svalero/webappcrud/dao/BreedMapper.class
 com/svalero/webappcrud/domain/Color.class
 com/svalero/webappcrud/servlet/removeCat.class
+com/svalero/webappcrud/util/SessionUtils.class
 com/svalero/webappcrud/dao/StatusAdoptionMapper.class
 com/svalero/webappcrud/domain/Cat.class
 com/svalero/webappcrud/dao/AdoptionMapper.class

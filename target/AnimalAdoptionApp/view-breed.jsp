@@ -34,11 +34,13 @@
                                        <p class="card-text mb-1"><strong>Descripción: </strong> <%= breed.getDescription() %> </p>
                                    </div>
                                     <div>
-                                        <button type="button" class="btn btn-dark">
-                                            <i class="bi bi-pencil"></i>
-                                            Editar
-                                        </button>
+                                        <%
+                                            if (role.equals("admin")) {
+                                        %>
                                         <a href="edit-breed.jsp?breedID=<%= breed.getBreedID() %>" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
+                                        <%
+                                            }
+                                        %>
                                     </div>
                                 </div>
                             </div>

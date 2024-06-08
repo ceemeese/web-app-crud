@@ -18,6 +18,10 @@
 </script> -->
 
 <%
+    if (!role.equals("admin")) {
+        response.sendRedirect("/webapp");
+    }
+
     int breedID;
     Breed breed = null;
     if (request.getParameter("breedID") == null) {

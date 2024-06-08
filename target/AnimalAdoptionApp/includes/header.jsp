@@ -17,6 +17,14 @@
 
 </head>
 <body>
+    <%
+        HttpSession currentSession = request.getSession();
+        String role = "anonymous";
+        if (currentSession.getAttribute("role") != null) {
+            role = currentSession.getAttribute("role").toString();
+        }
+    %>
+
     <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/webapp">
@@ -46,12 +54,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="view-breeds.jsp">Razas</a>
                     </li>
+                    <%
+                        if (role.equals("admin")) {
+                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="view-adoptions.jsp">Adopciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="view-users.jsp">Usuarios</a>
                     </li>
+                    <%
+                        }
+                    %>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -61,11 +75,5 @@
             </div>
         </div>
     </nav>
-    <%
-        HttpSession currentSession = request.getSession();
-        String role = "anonymous";
-        if (currentSession.getAttribute("role") != null) {
-            role = currentSession.getAttribute("role").toString();
-        }
-    %>
+
 

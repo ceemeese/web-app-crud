@@ -123,3 +123,7 @@ n
 >src/main/java/com/svalero/webappcrud/servlet/loginServlet.java,7/f/7fd680281910532b3093d43b43796172d67cee50
 k
 ;src/main/java/com/svalero/webappcrud/util/SessionUtils.java,b/2/b2a26a2fb6149a7db689f6f928ffa77befe8edfb
+o
+?src/main/java/com/svalero/webappcrud/servlet/logoutServlet.java,5/5/5577994a3653a41472a4456ad3b3e058287bf2aa
+q
+Asrc/main/java/com/svalero/webappcrud/servlet/loginoutServlet.java,a/a/aaf763971cf21c4cee9b5e4d6fe5605134c51057

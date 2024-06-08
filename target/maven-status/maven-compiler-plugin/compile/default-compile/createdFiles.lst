@@ -28,6 +28,7 @@ com/svalero/webappcrud/util/Constants.class
 com/svalero/webappcrud/domain/Adoption.class
 com/svalero/webappcrud/servlet/editUser.class
 com/svalero/webappcrud/dao/UserDao.class
+com/svalero/webappcrud/servlet/logoutServlet.class
 com/svalero/webappcrud/servlet/editBreed.class
 com/svalero/webappcrud/servlet/editAdoption.class
 com/svalero/webappcrud/util/DateUtils.class

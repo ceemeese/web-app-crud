@@ -70,7 +70,17 @@
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success me-2" type="submit">Buscador</button>
-                    <a class="btn btn-outline-primary" href="login.jsp">Login</a>
+                    <%
+                        if (role.equals("anonymous")) {
+                    %>
+                        <a class="btn btn-outline-primary" href="login.jsp">Login</a>
+                    <%
+                        } else {
+                    %>
+                        <a class="btn btn-outline-danger" href="logout">Log Out</a>
+                    <%
+                        }
+                    %>
                 </form>
             </div>
         </div>

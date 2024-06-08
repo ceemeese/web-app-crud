@@ -50,7 +50,10 @@
                 <label class="form-label" for="description">Descripción</label>
                 <textarea class="form-control" name="description" id="description" rows="2"><% if (breedID != 0) { %> <%= breed.getDescription() %><% } %></textarea>
             </div>
-
+            <div class="col">
+                <label for="image" class="form-label">Foto</label>
+                <input type="file" name="image" class="form-control" id="image"<% if (breedID != 0 ) { %> value="<%= breed.getImage()%><%}%>">
+            </div>
             <button type="submit" class="btn btn-success mt-3">Enviar</button>
             <input type="hidden" name="breedID" value="<%= breedID %>">
         </form>

@@ -4,14 +4,22 @@ import com.svalero.webappcrud.dao.CatDao;
 import com.svalero.webappcrud.dao.Database;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @WebServlet("/edit-cat")
+@MultipartConfig
 public class editCat extends HttpServlet {
 
     @Override
@@ -28,26 +36,41 @@ public class editCat extends HttpServlet {
                 catID = Integer.parseInt(request.getParameter("catID"));
             }
 
+
             String name = request.getParameter("name");
             int age = Integer.parseInt(request.getParameter("age"));
             String description = request.getParameter("description");
-            String image = request.getParameter("image2");
+            Part picturePart = request.getPart("image2");
             int gender = Integer.parseInt(request.getParameter("gender"));
             int breed = Integer.parseInt(request.getParameter("breed"));
             int color = Integer.parseInt(request.getParameter("color"));
             int state = Integer.parseInt(request.getParameter("state"));
             String location = request.getParameter("location");
 
+
+            //IMAGEN EN DISCO
+            String imagePath = request.getServletContext().getInitParameter("image-path");
+            String fileName = null;
+            if (picturePart.getSize() == 0) {
+                fileName = "no-image.jpg";
+            } else {
+                fileName = UUID.randomUUID() + ".jpg";
+                InputStream fileStream = picturePart.getInputStream();
+                Files.copy(fileStream, Path.of(imagePath + File.separator + fileName));
+            }
+
+
             Database.connect();
+            final String finalFileName = fileName;
             if (catID == 0) {
                 int affectedRows = Database.jdbi.withExtension(CatDao.class,
-                        dao -> dao.addCat(name, age, description, image, gender, breed, color, state, location));
+                        dao -> dao.addCat(name, age, description, finalFileName, gender, breed, color, state, location));
                 Database.close();
                 sendMessage("Nuevo miembro registrado correctamente", response);
             } else {
                 final int finalID = catID;
                 int affectedRows = Database.jdbi.withExtension(CatDao.class,
-                        dao -> dao.updateCat(name, age, description, image, gender, breed, color, state, location, finalID));
+                        dao -> dao.updateCat(name, age, description, finalFileName, gender, breed, color, state, location, finalID));
                 Database.close();
                 sendMessage("Miembro modificado correctamente", response);
             }

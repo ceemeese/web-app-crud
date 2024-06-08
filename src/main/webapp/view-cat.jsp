@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="row g-0">
                             <div class="col-6 col-md-5">
-                                <img class="card-img img-fluid rounded-start" src="./gato.jpg" alt="gato">
+                                <img class="card-img img-fluid rounded-start" src=../webapp_pictures/<%= cat.getImage() %> alt="gato">
                             </div>
                             <div class="col-6 col-md-7">
                                 <div class="card-body d-flex flex-column">
@@ -41,11 +41,7 @@
                                        <p class="card-text mb-1"> <strong>Edad: </strong> <%= cat.getAge() %></p>
                                    </div>
                                     <div>
-                                        <button type="button" class="btn btn-dark">
-                                            <i class="bi bi-chat-left-heart-fill me-1"></i>
-                                            Adoptame!
-                                        </button>
-                                        <a href="edit-cat.jsp?catID=<%= cat.getCatID()%>" class="btn btn-dark">Modificar</a>
+                                        <a href="edit-cat.jsp?catID=<%= cat.getCatID()%>" class="btn btn-dark btn-sm">Modificar</a>
                                     </div>
                                 </div>
                             </div>

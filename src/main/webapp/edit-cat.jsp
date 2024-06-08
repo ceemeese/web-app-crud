@@ -5,7 +5,7 @@
 
 <%@include file="includes/header.jsp"%>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function() {
         $("form").on("submit", function(event) {
             event.preventDefault();
@@ -15,7 +15,7 @@
             });
         });
     });
-</script>
+</script> -->
 
 <%
     int catID;
@@ -39,7 +39,7 @@
     </section>
 
     <section class="container">
-        <form class="" action="" method="post" content="text/html" enctype="multipart/form-data" >
+        <form class="" action="edit-cat" method="post" content="text/html" enctype="multipart/form-data" >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label class="form-label" for="name">Nombre</label>

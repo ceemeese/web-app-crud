@@ -18,6 +18,10 @@
 </script> -->
 
 <%
+    if (!role.equals("admin")) {
+        response.sendRedirect("/webapp");
+    }
+
     int catID;
     Cat cat = null;
     if (request.getParameter("catID") == null) {

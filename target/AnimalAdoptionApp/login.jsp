@@ -1,6 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="includes/header-login.jsp"%>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("form").on("submit", function(event) {
+      event.preventDefault();
+      var formValue = $(this).serialize();
+      $.post("login", formValue, function(data) {
+        $("#result").html(data);
+      });
+    });
+  });
+</script>
+
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="check2" viewBox="0 0 16 16">
     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -54,19 +66,21 @@
 
 
 <main class="form-signin w-100 m-auto">
-  <form action="login" method="post">
+  <form action="loginServlet" method="post">
     <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Usuario">
+      <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Usuario">
       <label for="floatingInput">Usuario</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
       <label for="floatingPassword">Contraseña</label>
     </div>
 
     <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
   </form>
+  <br/>
+  <div id="result"></div>
 </main>
 <%@include file="includes/footer.jsp"%>

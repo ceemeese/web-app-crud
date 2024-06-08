@@ -22,13 +22,17 @@ public interface UserDao {
     @UseRowMapper(UserMapper.class)
     User getUser (int id);
 
-    @SqlUpdate("INSERT INTO user (username, pass, email, name, surname, address, mobile, register) VALUES (?,?,?,?,?,?,?,?)")
-    int addUser(String username, String pass, String email, String name, String surname, String address, String mobile, Date register);
+    @SqlQuery("SELECT * FROM user WHERE username = ? AND pass = SHA1(?)")
+    @UseRowMapper(UserMapper.class)
+    User getUserLog(String username, String pass);
+
+    @SqlUpdate("INSERT INTO user (username, pass, email, name, surname, address, mobile, register, role) VALUES (?,SHA1(?),?,?,?,?,?,?,?)")
+    int addUser(String username, String pass, String email, String name, String surname, String address, String mobile, Date register, String role);
 
     @SqlUpdate("DELETE FROM user WHERE userID = ?")
     int removeUser(int userID);
 
-    @SqlUpdate("UPDATE user SET username = ?, email = ?, name = ?, surname = ?, address = ?, mobile = ? WHERE userID = ?")
-    int updateUser(String username, String email, String name, String surname, String address, String mobile, int userID);
+    @SqlUpdate("UPDATE user SET username = ?, email = ?, name = ?, surname = ?, address = ?, mobile = ?, role = ? WHERE userID = ?")
+    int updateUser(String username, String email, String name, String surname, String address, String mobile, String role, int userID);
 
 }

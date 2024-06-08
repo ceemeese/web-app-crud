@@ -7,15 +7,23 @@
 
 <%@include file="includes/header.jsp"%>
 
+
+
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Asociación Felina Patitas y Bigotes</h1>
                 <p class="lead text-body-secondary">Facilitamos la adopción responsable de gatitos rescatados, fomentando valores de cuidado animal y solidaridad en la comunidad..</p>
+                <%
+                    if (role.equals("admin")) {
+                %>
                 <p>
                     <a href="edit-cat.jsp" class="btn btn-dark my-2">Añadir gatito</a>
                 </p>
+                <%
+                    }
+                %>
             </div>
         </div>
     </section>
@@ -37,8 +45,14 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="view-cat.jsp?catID=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
+                                    <%
+                                        if (role.equals("admin")) {
+                                    %>
                                     <a href="edit-cat.jsp?catID=<%= cat.getCatID() %>" type="button" class="btn btn-sm btn-outline-secondary">Editar</a>
                                     <a href="remove-cat?catID=<%= cat.getCatID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                    <%
+                                        }
+                                    %>
                                 </div>
                                 <small class="text-body-secondary"> <%= cat.getName() %> </small>
                             </div>

@@ -18,13 +18,17 @@ import java.nio.file.Path;
 import java.sql.SQLException;
 import java.util.UUID;
 
+import static com.svalero.webappcrud.util.ErrorUtils.sendError;
+import static com.svalero.webappcrud.util.ErrorUtils.sendMessage;
+
 @WebServlet("/edit-breed")
 @MultipartConfig
 public class editBreed extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
 
         try {
             if (hasValidationErrors(request, response))
@@ -90,14 +94,6 @@ public class editBreed extends HttpServlet {
         }
 
         return hasErrors;
-    }
-
-    private void sendError(String message, HttpServletResponse response) throws IOException {
-        response.getWriter().println("<div class='alert alert-danger' role='alert'>" + message + "</div>");
-    }
-
-    private void sendMessage(String message, HttpServletResponse response) throws IOException {
-        response.getWriter().println("<div class='alert alert-success' role='alert'>" + message + "</div>");
     }
 
 }

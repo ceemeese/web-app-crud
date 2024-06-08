@@ -61,4 +61,11 @@
             </div>
         </div>
     </nav>
+    <%
+        HttpSession currentSession = request.getSession();
+        String role = "anonymous";
+        if (currentSession.getAttribute("role") != null) {
+            role = currentSession.getAttribute("role").toString();
+        }
+    %>
 

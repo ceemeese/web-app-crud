@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -18,6 +19,13 @@ public class removeUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int userID = Integer.parseInt(request.getParameter("userID"));
+
+        HttpSession currentSession = request.getSession();
+        if (currentSession.getAttribute("role") != null) {
+            if (!currentSession.getAttribute("role").equals("admin")) {
+                response.sendRedirect("/webapp");
+            }
+        }
 
         try {
             Database.connect();

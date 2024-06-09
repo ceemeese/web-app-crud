@@ -1,10 +1,12 @@
 
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(†“¾8¾É±¨ş1J$303ca772-915d-4498-97dd-b6b697ae6379
+L
+java:S1066"/Merge this if statement with the enclosing one.(˜·©Ì8ÍıÌÍÿ1
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(†“¾8¾É±¨ş1J$bc276398-df0d-473c-8e8e-e50be9222e14
 ˆ
-java:S1854+"@Remove this useless assignment to local variable "affectedRows".(¶²èµùÿÿÿÿ8ÅÉ±¨ş1J$18d9b5f0-71bb-4260-83ba-6e591d481388
-ƒ
-java:S18541"@Remove this useless assignment to local variable "affectedRows".(úùóã8ÅÉ±¨ş1J$a7bcbe59-3492-478b-8c8b-80d2048d8537
+java:S18548"@Remove this useless assignment to local variable "affectedRows".(¶²èµùÿÿÿÿ8ÅÉ±¨ş1J$60add058-7caa-4bfd-9f44-8cedbfdf84a5
+‚
+java:S1854>"@Remove this useless assignment to local variable "affectedRows".(ÊÉİJ8ÅÉ±¨ş1J$a89359ce-44d3-4ee9-869a-17db5f5eceaa
 y
-java:S1481+"1Remove this unused "affectedRows" local variable.(¶²èµùÿÿÿÿ8ÉÉ±¨ş1J$001ae83c-811a-44d7-a4a3-03c108847223
-t
-java:S14811"1Remove this unused "affectedRows" local variable.(úùóã8ÉÉ±¨ş1J$6f63b58c-da40-4a35-b578-a84df3b9610e
+java:S14818"1Remove this unused "affectedRows" local variable.(¶²èµùÿÿÿÿ8ÉÉ±¨ş1J$6fcd3470-6f19-4451-8725-23c92412da76
+s
+java:S1481>"1Remove this unused "affectedRows" local variable.(ÊÉİJ8ÉÉ±¨ş1J$34cbd6a2-6175-4d1d-bb7b-3cc0c88ddfe7

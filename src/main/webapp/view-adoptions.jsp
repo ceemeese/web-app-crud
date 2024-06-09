@@ -8,6 +8,12 @@
 
 
 <main>
+    <%
+        if (!role.equals("admin")) {
+            response.sendRedirect("/webapp");
+        }
+    %>
+
     <section class="py-5 text-center container">
         <h1>Adopciones</h1>
 

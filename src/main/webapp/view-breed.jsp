@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="row g-0">
                             <div class="col-6 col-md-5">
-                                <img class="card-img img-fluid rounded-start" src="./gato.jpg" alt="gato">
+                                <img class="card-img img-fluid rounded-start" src=../webapp_pictures/<%= breed.getImage() %> alt="gato">
                             </div>
                             <div class="col-6 col-md-7">
                                 <div class="card-body d-flex flex-column">
@@ -34,11 +34,13 @@
                                        <p class="card-text mb-1"><strong>Descripción: </strong> <%= breed.getDescription() %> </p>
                                    </div>
                                     <div>
-                                        <button type="button" class="btn btn-dark">
-                                            <i class="bi bi-pencil"></i>
-                                            Editar
-                                        </button>
+                                        <%
+                                            if (role.equals("admin")) {
+                                        %>
                                         <a href="edit-breed.jsp?breedID=<%= breed.getBreedID() %>" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
+                                        <%
+                                            }
+                                        %>
                                     </div>
                                 </div>
                             </div>

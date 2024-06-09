@@ -20,6 +20,6 @@ public class User {
     private String address;
     private String mobile;
     private Date register;
-
+    private String role;
 }
 

@@ -8,17 +8,29 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
+import static com.svalero.webappcrud.util.ErrorUtils.sendError;
+import static com.svalero.webappcrud.util.ErrorUtils.sendMessage;
 
 @WebServlet("/edit-adoption")
 public class editAdoption extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+
+        HttpSession currentSession = request.getSession();
+        if (currentSession.getAttribute("role") != null) {
+            if (!currentSession.getAttribute("role").equals("admin")) {
+                response.sendRedirect("/webapp");
+            }
+        }
 
         try {
             if (hasValidationErrors(request, response))
@@ -75,14 +87,6 @@ public class editAdoption extends HttpServlet {
         }
 
         return hasErrors;
-    }
-
-    private void sendError(String message, HttpServletResponse response) throws IOException {
-        response.getWriter().println("<div class='alert alert-danger' role='alert'>" + message + "</div>");
-    }
-
-    private void sendMessage(String message, HttpServletResponse response) throws IOException {
-        response.getWriter().println("<div class='alert alert-success' role='alert'>" + message + "</div>");
     }
 
 }

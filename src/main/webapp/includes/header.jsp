@@ -5,7 +5,7 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
     <title>Animales en adopción</title>
 
-    <link href="style.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -17,6 +17,14 @@
 
 </head>
 <body>
+    <%
+        HttpSession currentSession = request.getSession();
+        String role = "anonymous";
+        if (currentSession.getAttribute("role") != null) {
+            role = currentSession.getAttribute("role").toString();
+        }
+    %>
+
     <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/webapp">
@@ -46,18 +54,36 @@
                     <li class="nav-item">
                         <a class="nav-link" href="view-breeds.jsp">Razas</a>
                     </li>
+                    <%
+                        if (role.equals("admin")) {
+                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="view-adoptions.jsp">Adopciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="view-users.jsp">Usuarios</a>
                     </li>
+                    <%
+                        }
+                    %>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscador</button>
+                    <button class="btn btn-outline-success me-2" type="submit">Buscador</button>
+                    <%
+                        if (role.equals("anonymous")) {
+                    %>
+                        <a class="btn btn-outline-primary" href="login.jsp">Login</a>
+                    <%
+                        } else {
+                    %>
+                        <a class="btn btn-outline-danger" href="logout">Logout</a>
+                    <%
+                        }
+                    %>
                 </form>
             </div>
         </div>
     </nav>
+
 

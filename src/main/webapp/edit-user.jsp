@@ -82,6 +82,12 @@
                     <input type="tel" name="mobile" class="form-control" id="mobile" placeholder="Teléfono de contacto"<% if (userID != 0 ) { %> value="<%= user.getMobile()%><%}%>">
                 </div>
             </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="role">Rol</label>
+                    <input type="text" name="role" class="form-control" id="role" placeholder="Rol de usuario"<% if (userID != 0 ) { %> value="<%= user.getRole()%><%}%>">
+                </div>
+            </div>
 
             <button type="submit" class="btn btn-success mt-3">Enviar</button>
             <input type="hidden" name="userID" value="<%= userID %>">

@@ -7,6 +7,7 @@ com/svalero/webappcrud/dao/StateDao.class
 com/svalero/webappcrud/dao/CatDao.class
 com/svalero/webappcrud/dao/ColorDao.class
 com/svalero/webappcrud/util/ErrorUtils.class
+com/svalero/webappcrud/servlet/loginServlet.class
 com/svalero/webappcrud/dao/GenderMapper.class
 com/svalero/webappcrud/domain/Gender.class
 com/svalero/webappcrud/servlet/editCat.class
@@ -17,6 +18,7 @@ com/svalero/webappcrud/dao/StatusAdoptionDao.class
 com/svalero/webappcrud/dao/BreedMapper.class
 com/svalero/webappcrud/domain/Color.class
 com/svalero/webappcrud/servlet/removeCat.class
+com/svalero/webappcrud/util/SessionUtils.class
 com/svalero/webappcrud/dao/StatusAdoptionMapper.class
 com/svalero/webappcrud/domain/Cat.class
 com/svalero/webappcrud/dao/AdoptionMapper.class
@@ -26,6 +28,7 @@ com/svalero/webappcrud/util/Constants.class
 com/svalero/webappcrud/domain/Adoption.class
 com/svalero/webappcrud/servlet/editUser.class
 com/svalero/webappcrud/dao/UserDao.class
+com/svalero/webappcrud/servlet/logoutServlet.class
 com/svalero/webappcrud/servlet/editBreed.class
 com/svalero/webappcrud/servlet/editAdoption.class
 com/svalero/webappcrud/util/DateUtils.class

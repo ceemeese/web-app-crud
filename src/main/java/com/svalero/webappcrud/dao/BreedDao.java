@@ -21,13 +21,13 @@ public interface BreedDao {
     @UseRowMapper(BreedMapper.class)
     Breed getBreed (int id);
 
-    @SqlUpdate("INSERT INTO breed (name, description) VALUES (?,?)")
-    int addBreed(String name, String description);
+    @SqlUpdate("INSERT INTO breed (name, description, image) VALUES (?,?,?)")
+    int addBreed(String name, String description, String image);
 
     @SqlUpdate("DELETE FROM breed WHERE breedID = ?")
     int removeBreed(int breedID);
 
-    @SqlUpdate("UPDATE breed SET name = ?, description = ? WHERE breedID = ?")
-    int updateBreed(String name, String description, int breedID);
+    @SqlUpdate("UPDATE breed SET name = ?, description = ?, image = ? WHERE breedID = ?")
+    int updateBreed(String name, String description, String image, int breedID);
 
 }

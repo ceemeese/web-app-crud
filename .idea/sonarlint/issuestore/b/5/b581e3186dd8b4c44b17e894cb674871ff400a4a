@@ -1,10 +1,12 @@
 
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(êñ¶8ƒ±©ùô1J$e1c7faef-6b97-47d8-b069-12c3c021e67e
+L
+java:S1066"/Merge this if statement with the enclosing one.(˜·©Ì8ËÖÍÍÿ1
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(êñ¶8ƒ±©ùô1J$a9535107-cfc0-454b-b641-20f7e62d087c
 ˆ
-java:S1854"@Remove this useless assignment to local variable "affectedRows".(¡ŞÛÎıÿÿÿÿ8Š±©ùô1J$7c8a00e2-290f-45a1-a584-4b1fc99df41c
+java:S1854 "@Remove this useless assignment to local variable "affectedRows".(¡ŞÛÎıÿÿÿÿ8Š±©ùô1J$1ba08059-9c86-4b2b-bee6-ad30ae0fad80
 ‡
-java:S2147"DCombine this catch with the one at line 28, which has the same body.(É®£8‹±©ùô1J$acb0022c-c4d1-42b6-9e3e-c081eac50963
+java:S2147&"DCombine this catch with the one at line 36, which has the same body.(É®£8‹±©ùô1J$9b2ce65e-ad89-4d9f-a897-daeb98ac64d0
 ‡
-java:S2147 "DCombine this catch with the one at line 30, which has the same body.(”ı¾8Œ±©ùô1J$b8591ac5-506b-4edf-b8df-6f78bf0bf8bc
+java:S2147("DCombine this catch with the one at line 38, which has the same body.(”ı¾8Œ±©ùô1J$7d88d5c9-264a-4d69-a750-94c3e368e9e7
 y
-java:S1481"1Remove this unused "affectedRows" local variable.(¡ŞÛÎıÿÿÿÿ8±©ùô1J$e5886e48-08ec-4510-af8a-49187b84a9f6
+java:S1481 "1Remove this unused "affectedRows" local variable.(¡ŞÛÎıÿÿÿÿ8±©ùô1J$ab3db5bb-0556-4f12-b6f2-43d44edcf34b

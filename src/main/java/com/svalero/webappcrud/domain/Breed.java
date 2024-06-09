@@ -12,6 +12,7 @@ public class Breed {
     private int breedID;
     private String name;
     private String description;
+    private String image;
 
 }
 

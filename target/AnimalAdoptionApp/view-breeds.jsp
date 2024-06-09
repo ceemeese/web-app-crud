@@ -14,9 +14,15 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Razas</h1>
                 <p class="lead text-body-secondary">Tarjeta de presentación felina: es la etiqueta que lleva puesta, con su propio estilo de pelo, color y personalidad</p>
+                <%
+                    if (role.equals("admin")) {
+                %>
                 <p>
                     <a href="edit-breed.jsp" class="btn btn-dark my-2">Añadir raza</a>
                 </p>
+                <%
+                    }
+                %>
             </div>
         </div>
     </section>
@@ -31,17 +37,20 @@
                 %>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
+                        <img src=../webapp_pictures/<%= breed.getImage() %> width="100%" height="225">
                         <div class="card-body">
                             <p class="card-text"> <%= breed.getName() %> </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="view-breed.jsp?breedID=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-secondary">Ver</a>
+                                    <%
+                                        if (role.equals("admin")) {
+                                    %>
                                     <a href="edit-breed.jsp?breedID=<%= breed.getBreedID() %>" type="button" class="btn btn-sm btn btn-outline-secondary">Editar</a>
                                     <a href="remove-breed?breedID=<%= breed.getBreedID()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                    <%
+                                        }
+                                    %>
                                 </div>
                             </div>
                         </div>

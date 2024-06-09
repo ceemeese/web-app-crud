@@ -41,7 +41,15 @@
                                        <p class="card-text mb-1"> <strong>Edad: </strong> <%= cat.getAge() %></p>
                                    </div>
                                     <div>
-                                        <a href="edit-cat.jsp?catID=<%= cat.getCatID()%>" class="btn btn-dark btn-sm">Modificar</a>
+                                        <%
+                                            if (role.equals("admin")) {
+                                        %>
+                                        <p>
+                                            <a href="edit-cat.jsp?catID=<%= cat.getCatID()%>" class="btn btn-dark btn-sm">Modificar</a>
+                                        </p>
+                                        <%
+                                            }
+                                        %>
                                     </div>
                                 </div>
                             </div>

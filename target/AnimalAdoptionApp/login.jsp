@@ -5,9 +5,19 @@
   $(document).ready(function() {
     $("form").on("submit", function(event) {
       event.preventDefault();
-      var formValue = $(this).serialize();
-      $.post("login", formValue, function(data) {
-        $("#result").html(data);
+      const formValue = $(this).serialize();
+      $.ajax("login", {
+        type: "POST",
+        data: formValue,
+        statusCode: {
+          200: function(response) {
+            if (response === "ok") {
+              window.location.href = "/webapp";
+            } else {
+              $("#result").html(response);
+            }
+          }
+        }
       });
     });
   });

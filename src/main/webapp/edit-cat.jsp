@@ -5,17 +5,36 @@
 
 <%@include file="includes/header.jsp"%>
 
-<!--<script type="text/javascript">
+<script>
     $(document).ready(function() {
-        $("form").on("submit", function(event) {
+        $("#edit-button").click(function (event) {
             event.preventDefault();
-            var formValue = $(this).serialize();
-            $.post("edit-cat", formValue, function(data) {
-                $("#result").html(data);
+            const form = $("#edit-form")[0];
+            const data = new FormData(form);
+
+            $("#edit-button").prop("disabled", true);
+
+            $.ajax({
+                type: "POST",
+                enctype: "multipart/form-data",
+                url: "edit-cat",
+                data: data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 600000,
+                success: function (data) {
+                    $("#result").html(data);
+                    $("#edit-button").prop("disabled", false);
+                },
+                error: function (error) {
+                    $("#result").html(error.responseText);
+                    $("#edit-button").prop("disabled", false);
+                }
             });
         });
     });
-</script> -->
+</script>
 
 <%
     if (!role.equals("admin")) {
@@ -43,7 +62,7 @@
     </section>
 
     <section class="container">
-        <form class="" action="edit-cat" method="post" content="text/html" enctype="multipart/form-data" >
+        <form class="" method="post" enctype="multipart/form-data" id="edit-form" >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label class="form-label" for="name">Nombre</label>
@@ -132,7 +151,7 @@
                     <textarea class="form-control" name="location" id="location" rows="1"><%if(catID != 0){%><%=cat.getLocation()%><%}%></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success mt-3">Enviar</button>
+            <input type="submit" value="Enviar" id="edit-button" class="btn btn-success mt-3"/>
             <input type="hidden" name="catID" value="<%= catID %>">
         </form>
         <br/>

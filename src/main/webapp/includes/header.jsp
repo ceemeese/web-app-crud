@@ -77,7 +77,7 @@
                     <%
                         } else {
                     %>
-                        <a class="btn btn-outline-danger" href="logout">Log Out</a>
+                        <a class="btn btn-outline-danger" href="logout">Logout</a>
                     <%
                         }
                     %>

@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import static com.svalero.webappcrud.util.ErrorUtils.sendError;
-import static com.svalero.webappcrud.util.ErrorUtils.sendMessage;
 
 @WebServlet("/login")
 public class loginServlet extends HttpServlet {
@@ -41,9 +40,8 @@ public class loginServlet extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("username", user.getUsername());
                     session.setAttribute("role", user.getRole());
+                    response.getWriter().print("ok");
 
-                    sendMessage("Sesión iniciada", response);
-                    response.sendRedirect("/webapp");
                 } else {
                     sendError("El usuario no existe", response);
                 }

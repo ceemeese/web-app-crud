@@ -1,6 +1,7 @@
 package com.svalero.webappcrud.dao;
 
 import com.svalero.webappcrud.domain.Cat;
+import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
@@ -12,6 +13,10 @@ public interface CatDao {
     @SqlQuery("SELECT * FROM cat")
     @UseRowMapper(CatMapper.class)
     List<Cat> getAllCats();
+
+    @SqlQuery("SELECT * FROM cat WHERE name = :searchTerm OR description = :searchTerm")
+    @UseRowMapper(CatMapper.class)
+    List<Cat> findCats(@Bind("searchTerm") String searchTerm);
 
     @SqlQuery("SELECT * FROM cat WHERE catID = ?")
     @UseRowMapper(CatMapper.class)

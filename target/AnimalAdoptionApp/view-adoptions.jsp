@@ -23,7 +23,7 @@
     <section class="py-5 text-center container">
         <h1>Adopciones</h1>
 
-        <div class="row py-lg-5">
+        <div class="row py-lg-1">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <form id="search-form" method="GET" action="">
                     <div class="">

@@ -20,7 +20,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Asociación Felina Patitas y Bigotes</h1>
+                <h1 class="fw-light">Asociación Felina</h1>
                 <p class="lead text-body-secondary">Facilitamos la adopción responsable de gatitos rescatados, fomentando valores de cuidado animal y solidaridad en la comunidad..</p>
                 <%
                     if (role.equals("admin")) {
@@ -84,7 +84,7 @@
                                         }
                                     %>
                                 </div>
-                                <small class="text-body-secondary"> <%= cat.getName() %> </small>
+                                <small class="text-body-secondary"> <%= cat.getAge() %> </small>
                             </div>
                         </div>
                     </div>

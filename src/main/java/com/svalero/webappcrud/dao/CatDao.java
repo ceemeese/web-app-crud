@@ -14,7 +14,7 @@ public interface CatDao {
     @UseRowMapper(CatMapper.class)
     List<Cat> getAllCats();
 
-    @SqlQuery("SELECT * FROM cat WHERE name = :searchTerm OR description = :searchTerm")
+    @SqlQuery("SELECT * FROM cat WHERE name = :searchTerm OR age = :searchTerm")
     @UseRowMapper(CatMapper.class)
     List<Cat> findCats(@Bind("searchTerm") String searchTerm);
 

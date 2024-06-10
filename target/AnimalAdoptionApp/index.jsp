@@ -4,8 +4,15 @@
 <%@ page import="com.svalero.webappcrud.dao.CatDao" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.svalero.webappcrud.dao.Database" %>
+<%@ page import="java.util.ArrayList" %>
 
 <%@include file="includes/header.jsp"%>
+
+<script>
+    $(document).ready(function(){
+        $("#search-input").focus()
+    });
+</script>
 
 
 
@@ -13,7 +20,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Asociación Felina Patitas y Bigotes</h1>
+                <h1 class="fw-light">Asociación Felina</h1>
                 <p class="lead text-body-secondary">Facilitamos la adopción responsable de gatitos rescatados, fomentando valores de cuidado animal y solidaridad en la comunidad..</p>
                 <%
                     if (role.equals("admin")) {
@@ -26,15 +33,38 @@
                 %>
             </div>
         </div>
+        <div class="row py-lg-1">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <form id="search-form" method="GET" action="">
+                    <div class="">
+                        <input type="text" name="search" class="form-control" id="search-input" placeholder="Buscar">
+                        <button class="btn btn-dark my-2" type="submit" id="search-button">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
+
+
 
 
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <%
+                    String search = "";
+                    if (request.getParameter("search") != null) {
+                        search = request.getParameter("search");
+                    }
+
                     Database.connect();
-                    List<Cat> cats = Database.jdbi.withExtension(CatDao.class, CatDao::getAllCats);
+                    List<Cat> cats = null;
+                    if (search.isEmpty()) {
+                        cats = Database.jdbi.withExtension(CatDao.class, CatDao::getAllCats);
+                    } else {
+                        final String searchTerm = search;
+                        cats = Database.jdbi.withExtension(CatDao.class, dao->dao.findCats(searchTerm));
+                    }
                     for (Cat cat : cats) {
                 %>
                 <div class="col">
@@ -54,7 +84,7 @@
                                         }
                                     %>
                                 </div>
-                                <small class="text-body-secondary"> <%= cat.getName() %> </small>
+                                <small class="text-body-secondary"> <%= cat.getAge() %> </small>
                             </div>
                         </div>
                     </div>

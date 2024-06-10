@@ -1,6 +1,7 @@
 package com.svalero.webappcrud.dao;
 
 import com.svalero.webappcrud.domain.Breed;
+import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
@@ -16,6 +17,10 @@ public interface BreedDao {
     @SqlQuery("SELECT * FROM breed WHERE name = ?")
     @UseRowMapper(BreedMapper.class)
     Breed getIdBreed(String name);
+
+    @SqlQuery("SELECT * FROM breed WHERE name = :searchTerm OR description = :searchTerm")
+    @UseRowMapper(BreedMapper.class)
+    List<Breed> findBreeds(@Bind("searchTerm") String searchTerm);
 
     @SqlQuery("SELECT * FROM breed WHERE breedID = ?")
     @UseRowMapper(BreedMapper.class)

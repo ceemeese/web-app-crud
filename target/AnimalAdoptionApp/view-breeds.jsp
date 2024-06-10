@@ -7,6 +7,12 @@
 
 <%@include file="includes/header.jsp"%>
 
+<script>
+    $(document).ready(function(){
+        $("#search-input").focus()
+    });
+</script>
+
 <main>
 
     <section class="py-5 text-center container">
@@ -25,14 +31,35 @@
                 %>
             </div>
         </div>
+        <div class="row py-lg-1">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <form id="search-form" method="GET" action="">
+                    <div class="">
+                        <input type="text" name="search" class="form-control" id="search-input" placeholder="Buscar">
+                        <button class="btn btn-dark my-2" type="submit" id="search-button">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
     
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <%
+                    String search = "";
+                    if (request.getParameter("search") != null) {
+                        search = request.getParameter("search");
+                    }
+
                     Database.connect();
-                    List<Breed> breeds = Database.jdbi.withExtension(BreedDao.class, dao-> dao.getAllBreeds());
+                    List<Breed> breeds = null;
+                    if (search.isEmpty()) {
+                        breeds = Database.jdbi.withExtension(BreedDao.class, dao-> dao.getAllBreeds());
+                    } else {
+                        final String searchTerm = search;
+                        breeds = Database.jdbi.withExtension(BreedDao.class, dao->dao.findBreeds(searchTerm));
+                    }
                     for (Breed breed : breeds) {
                 %>
                 <div class="col">

@@ -1,6 +1,7 @@
 package com.svalero.webappcrud.dao;
 
 import com.svalero.webappcrud.domain.User;
+import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
@@ -17,6 +18,10 @@ public interface UserDao {
     @SqlQuery("SELECT * FROM user WHERE username = ?")
     @UseRowMapper(UserMapper.class)
     User getIdUser(String name);
+
+    @SqlQuery("SELECT * FROM user WHERE name = :searchTerm OR surname = :searchTerm")
+    @UseRowMapper(UserMapper.class)
+    List<User> findUsers(@Bind("searchTerm") String searchTerm);
 
     @SqlQuery("SELECT * FROM user WHERE userID = ?")
     @UseRowMapper(UserMapper.class)

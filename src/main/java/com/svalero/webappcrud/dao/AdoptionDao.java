@@ -1,6 +1,7 @@
 package com.svalero.webappcrud.dao;
 
 import com.svalero.webappcrud.domain.Adoption;
+import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
@@ -17,6 +18,10 @@ public interface AdoptionDao {
     @SqlQuery("SELECT * FROM adoption WHERE adoptionID = ?")
     @UseRowMapper(AdoptionMapper.class)
     Adoption getAdoption (int adoptionID);
+
+    @SqlQuery("SELECT * FROM adoption WHERE infoAdoption = :searchTerm OR dateAdoption = :searchTerm")
+    @UseRowMapper(AdoptionMapper.class)
+    List<Adoption> findAdoptions(@Bind("searchTerm") String searchTerm);
 
     @SqlQuery("SELECT catID FROM adoption WHERE userID = ?")
     @UseRowMapper(AdoptionMapper.class)

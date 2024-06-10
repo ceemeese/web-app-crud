@@ -127,3 +127,5 @@ o
 ?src/main/java/com/svalero/webappcrud/servlet/logoutServlet.java,5/5/5577994a3653a41472a4456ad3b3e058287bf2aa
 q
 Asrc/main/java/com/svalero/webappcrud/servlet/loginoutServlet.java,a/a/aaf763971cf21c4cee9b5e4d6fe5605134c51057
+M
+src/main/webapp/css/style.css,2/c/2c1f525046eaa5ad3e39cc3d3b2f4c4fab4ff318

@@ -6,6 +6,12 @@
 
 <%@include file="includes/header.jsp"%>
 
+<script>
+    $(document).ready(function(){
+        $("#search-input").focus()
+    });
+</script>
+
 <main>
     <%
         if (!role.equals("admin")) {
@@ -15,6 +21,16 @@
 
     <section class="py-5 text-center container">
         <h1>Usuarios</h1>
+        <div class="row py-lg-1">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <form id="search-form" method="GET" action="">
+                    <div class="">
+                        <input type="text" name="search" class="form-control" id="search-input" placeholder="Buscar">
+                        <button class="btn btn-dark my-2" type="submit" id="search-button">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
 
@@ -30,8 +46,21 @@
             </thead>
             <tbody>
                 <%
+                    String search = "";
+                    if (request.getParameter("search") != null) {
+                        search = request.getParameter("search");
+                    }
+
+
                     Database.connect();
-                    List<User> users = Database.jdbi.withExtension(UserDao.class, UserDao::getAllUsers);
+                    List<User> users = null;
+                    if (search.isEmpty()) {
+                        users = Database.jdbi.withExtension(UserDao.class, UserDao::getAllUsers);
+                    } else {
+                        final String searchTerm = search;
+                        users = Database.jdbi.withExtension(UserDao.class, dao->dao.findUsers(searchTerm));
+                    }
+
                     for (User user : users) {
                 %>
                 <tr>

@@ -6,6 +6,12 @@
 
 <%@include file="includes/header.jsp"%>
 
+<script>
+    $(document).ready(function(){
+        $("#search-input").focus()
+    });
+</script>
+
 
 <main>
     <%
@@ -16,6 +22,17 @@
 
     <section class="py-5 text-center container">
         <h1>Adopciones</h1>
+
+        <div class="row py-lg-1">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <form id="search-form" method="GET" action="">
+                    <div class="">
+                        <input type="text" name="search" class="form-control" id="search-input" placeholder="Buscar">
+                        <button class="btn btn-dark my-2" type="submit" id="search-button">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <table id="example" class="table table-striped table-hover" style="width:100%">
             <thead>
@@ -30,8 +47,20 @@
             </thead>
             <tbody>
                 <%
+                    String search = "";
+                    if (request.getParameter("search") != null) {
+                        search = request.getParameter("search");
+                    }
+
                     Database.connect();
-                    List<Adoption> adoptions = Database.jdbi.withExtension(AdoptionDao.class, AdoptionDao::getAllAdoptions);
+                    List<Adoption> adoptions = null;
+
+                    if (search.isEmpty()) {
+                        adoptions = Database.jdbi.withExtension(AdoptionDao.class, AdoptionDao::getAllAdoptions);
+                    } else {
+                        final String searchTerm = search;
+                        adoptions = Database.jdbi.withExtension(AdoptionDao.class, dao->dao.findAdoptions(searchTerm));
+                    }
                     for (Adoption adoption : adoptions) {
                 %>
                 <tr>

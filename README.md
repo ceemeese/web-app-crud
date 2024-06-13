@@ -1,4 +1,7 @@
 # web-app-crud
+
+Aplicación de gestión de adopciones
+
 - Dar de alta: Se podrá dar de alta, a través de un formulario web, información de al menos 3 tablas de la Base de Datos. Se validarán al menos 2 campos de cada tabla.
 - Listado y Vista Detalle: Se podrá listar toda la información de las 3 tablas que hayas decidido que se pueden dar de alta y se podrá visualizar, haciendo click en cada uno de ellos, la información completa sobre dicho elemento
 - Búsqueda: Los usuarios podrán realizar búsquedas de las 3 tablas con los que hayas decidido trabajar. En la búsqueda se deberán emplear, al menos, 2 criterios de búsqueda.
